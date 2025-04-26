@@ -1,0 +1,20 @@
+﻿@model mvc_pets.Models.Pet
+
+@{
+    ViewBag.Title = "Pet Details";
+}
+
+<h2>@Model.PetName</h2>
+
+<div class="card mb-4" style="max-width: 600px;">
+    <img src="@Model.Image" class="card-img-top" alt="@Model.PetName" />
+    <div class="card-body">
+        <p><strong>Age:</strong> @Model.Age</p>
+        <p><strong>Gender:</strong> @Model.Gender</p>
+        <p><strong>Species:</strong> @Model.Species</p>
+        <p><strong>Health Status:</strong> @Model.HealthStatus</p>
+        <p><strong>Description:</strong> @Model.Description</p>
+        <p><strong>Adoption Status:</strong> @Model.AdoptionStatus</p>
+    </div>
+</div>
+1

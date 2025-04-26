@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                <img src="~/images/logo.png" alt="Logo" style="height: 40px;" />
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <!-- Profile icon link -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Profile")" title="Go to Profile">
+                                <img src="~/images/profile.png" alt="Profile" style="height: 35px; width: 35px; border-radius: 50%;" />
+                            </a>
+                        </li>
+
+                        <!-- Logout button -->
+                        <li class="nav-item">
+                            <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline">
+                                <button type="submit" class="btn btn-outline-danger">Logout</button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Login", "Account")">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Register", "Account")">Register</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        @RenderBody() <!-- This renders the body content from the view -->
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <footer class="bg-light text-center py-3">
+            <p>&copy; 2025 My Website - All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Section -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    @RenderSection("Scripts", required: false) <!-- This renders the Scripts section if defined in the view -->
+</body>
+</html>
