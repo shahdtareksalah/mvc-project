@@ -3,15 +3,19 @@
     public class Pet
     {
         public int PetId { get; set; }
-        public string Name { get; set; }
+        public string PetName { get; set; }
+        public string Species { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
-        public string Species { get; set; }
-        public string HealthStatus { get; set; }
         public string Description { get; set; }
-        public string GregoryStatus { get; set; } // Lost - Found
-        public string ImageUrl { get; set; }
-        public string AdoptionStatus { get; set; } // Available - Pending
+        public string Image { get; set; }
+        public string HealthStatus { get; set; }
+        public string EmergencyStatus { get; set; }
+        public string AdoptionStatus { get; set; }
+
+        public ICollection<AdoptionRequest> AdoptionRequests { get; set; }
+        public ICollection<CaringRequest> CaringRequests { get; set; }
     }
+
 
 }

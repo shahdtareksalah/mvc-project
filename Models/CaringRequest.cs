@@ -1,13 +1,20 @@
 ﻿using mvc_pets.Models;
+using System.ComponentModel.DataAnnotations;
 
 public class CaringRequest
 {
-    public int Id { get; set; }
+    [Key]
+    public int CareReqId { get; set; }
+
+    public string UserId { get; set; }
+    public ApplicationUser User { get; set; }
+
     public int PetId { get; set; }
     public Pet Pet { get; set; }
-    public string Usual { get; set; }
+
+    public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
+    public string Notes { get; set; }
+    public decimal Price { get; set; }
     public string PaymentMethod { get; set; }
-    public decimal Amount { get; set; }
-    public string Description { get; set; }
 }
