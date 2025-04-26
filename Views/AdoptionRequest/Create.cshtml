@@ -1,0 +1,183 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Adoption Application</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #bdc3c7, #2c3e50);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ecf0f1;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 10px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 6px;
+            background-color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #7f8c8d;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #95a5a6;
+            }
+
+        /* Login container styling */
+        .login-container {
+            background-color: #ecf0f1;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            width: 320px;
+            text-align: center;
+        }
+
+            /* Heading styling */
+            .login-container h2 {
+                margin-bottom: 20px;
+                color: #2c3e50;
+            }
+
+            /* Input fields styling */
+            .login-container input {
+                width: 100%;
+                padding: 12px 10px;
+                margin: 10px 0;
+                border: 1px solid #bdc3c7;
+                border-radius: 6px;
+                background-color: #fff;
+                font-size: 16px;
+            }
+
+            /* Button styling */
+            .login-container button {
+                width: 100%;
+                padding: 12px;
+                background-color: #7f8c8d;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+                .login-container button:hover {
+                    background-color: #95a5a6;
+                }
+
+            /* Paragraph and link styling */
+            .login-container p {
+                margin-top: 15px;
+                font-size: 14px;
+                color: #2c3e50;
+            }
+
+            .login-container a {
+                color: #34495e;
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+    <!-- Login Page Section -->
+    <div class="login-container">
+        <h2>Welcome Back</h2>
+        <form action="#" method="post">
+            <input type="text" placeholder="Username" required />
+            <input type="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </form>
+    </div>
+
+    <!-- Pet Adoption Form Section -->
+    <div class="form-container">
+        <h2>Pet Adoption Application</h2>
+        <form action="#" method="post">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required />
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+
+            <label for="address">Home Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your home address" required />
+
+            <label for="preferred-animal">Preferred Animal</label>
+            <select id="preferred-animal" name="preferred-animal" required>
+                <option value="">Select an animal</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="rabbit">Rabbit</option>
+                <option value="bird">Bird</option>
+            </select>
+
+            <label for="experience">Do you have experience with pets?</label>
+            <textarea id="experience" name="experience" placeholder="Tell us about your experience with pets" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

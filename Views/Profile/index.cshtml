@@ -1,0 +1,66 @@
+﻿@model mvc_pets.ViewModels.UserProfileViewModel
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+<form id="profilePicForm" asp-action="UpdateProfilePicture" asp-controller="Profile" enctype="multipart/form-data" method="post">
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <img id="profile-preview" src="@Model.ProfilePicture" alt="Profile Picture"
+                 style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid #ddd;" />
+
+            <input type="file" id="fileInput" name="NewProfilePicture" accept="image/*" style="display: none;" />
+
+            <button type="button" id="chooseBtn" class="btn btn-primary">
+                Choose Picture
+            </button>
+
+            <button type="submit" id="submitBtn" class="btn btn-success" style="display: none;">
+                Change Picture
+            </button>
+        </div>
+
+        <div>
+            <h2>@Model.FirstName @Model.LastName</h2>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Phone:</strong> @Model.PhoneNumber</p>
+            <p><strong>Address:</strong> @Model.Address</p>
+            <p><strong>Gender:</strong> @Model.Gender</p>
+        </div>
+
+</form>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fileInput = document.getElementById('fileInput');
+            const chooseBtn = document.getElementById('chooseBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            const profilePreview = document.getElementById('profile-preview');
+
+            chooseBtn.addEventListener('click', function () {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', function (e) {
+                if (e.target.files && e.target.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        profilePreview.src = event.target.result;
+                        submitBtn.style.display = 'inline-block';
+                    };
+                    reader.readAsDataURL(e.target.files[0]);
+                }
+            });
+        });
+    </script>
+}
