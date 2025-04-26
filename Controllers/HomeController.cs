@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using mvc_pets.Models;
 using System.Diagnostics;
 
+
 namespace mvc_pets.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -13,8 +15,14 @@ namespace mvc_pets.Controllers
             _logger = logger;
         }
 
+        
         public IActionResult Index()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             return View();
         }
 
