@@ -15,6 +15,7 @@ namespace mvc_pets.Models
         public DbSet<AdoptionRequest> Adoptions { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<CaringRequest> CaringRequests { get; set; }
+        public DbSet<BlogPost> BlogPosts { get; set; }
 
     }
 }

@@ -1,0 +1,55 @@
+﻿@model List<mvc_pets.Models.BlogPost>
+
+@{
+    ViewBag.Title = "Blog Index";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="./css/personal-profile.css" />
+}
+
+<div class="container py-5">
+    <h2 class="text-center mb-4 title">📰 Blog</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="text-center mb-4">
+        <a href="@Url.Action("Create", "BlogPost")" class="btn btn-success">
+            ➕ Create New Blog Post
+        </a>
+    </div>
+
+    @foreach (var blog in Model)
+    {
+        <div class="card shadow mb-4" style="max-width: 700px; margin: auto;">
+            <div class="card-body p-5">
+                <h4 class="mb-2">@blog.Title</h4>
+
+                <div class="d-flex flex-column align-items-center mb-4">
+                    <img src="@blog.Image" alt="Blog Picture"
+                         class="rounded mb-3"
+                         style="width: 140px; height: 140px; object-fit: cover; border: 3px solid #ccc;" />
+                </div>
+
+                <hr />
+
+                <div class="text-center">
+                    <p><i class="fas fa-user"></i> <strong>Author:</strong> @blog.User?.FirstName @blog.User?.LastName</p>
+                    <p><i class="fas fa-calendar-alt"></i> <strong>Published Date:</strong> @blog.CreatedAt.ToShortDateString()</p>
+
+                    <div class="content">
+                        <p>@(blog.Content.Length > 100 ? blog.Content.Substring(0, 100) + "..." : blog.Content)</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

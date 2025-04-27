@@ -4,17 +4,40 @@
     ViewBag.Title = "Pet Details";
 }
 
-<h2>@Model.PetName</h2>
+<div class="container py-5">
+    <!-- Title -->
+    <h2 class="text-center mb-5 title">🐾 Meet @Model.PetName!</h2>
 
-<div class="card mb-4" style="max-width: 600px;">
-    <img src="@Model.Image" class="card-img-top" alt="@Model.PetName" />
-    <div class="card-body">
-        <p><strong>Age:</strong> @Model.Age</p>
-        <p><strong>Gender:</strong> @Model.Gender</p>
-        <p><strong>Species:</strong> @Model.Species</p>
-        <p><strong>Health Status:</strong> @Model.HealthStatus</p>
-        <p><strong>Description:</strong> @Model.Description</p>
-        <p><strong>Adoption Status:</strong> @Model.AdoptionStatus</p>
+    <!-- Pet Card -->
+    <div class="card mx-auto shadow pet-details-card" style="max-width: 600px; border-radius: 15px;">
+        <img src="@Model.Image" class="card-img-top pet-card-img" alt="@Model.PetName" style="border-radius: 15px 15px 0 0;">
+
+        <div class="card-body pet-card-body">
+            <h4 class="card-title text-center">@Model.PetName</h4>
+
+            <ul class="list-group list-group-flush my-3">
+                <li class="list-group-item"><strong>Age:</strong> @Model.Age</li>
+                <li class="list-group-item"><strong>Gender:</strong> @Model.Gender</li>
+                <li class="list-group-item"><strong>Species:</strong> @Model.Species</li>
+                <li class="list-group-item"><strong>Health Status:</strong> @Model.HealthStatus</li>
+                <li class="list-group-item"><strong>Description:</strong> @Model.Description</li>
+                <li class="list-group-item"><strong>Adoption Status:</strong> @Model.AdoptionStatus</li>
+            </ul>
+
+            <div class="text-center">
+                @if (Model.AdoptionStatus == "Available")
+                {
+                    <a href="@Url.Action("Adopt", "Pets", new { id = Model.PetId })" class="btn btn-success pet-adopt-btn">
+                        ❤️ Adopt @Model.PetName
+                    </a>
+                }
+                else
+                {
+                    <button class="btn btn-secondary" disabled>
+                        💤 Already Adopted
+                    </button>
+                }
+            </div>
+        </div>
     </div>
 </div>
-1
