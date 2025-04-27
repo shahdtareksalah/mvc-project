@@ -1,43 +1,62 @@
 ﻿@model mvc_pets.ViewModels.UserProfileViewModel
 
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+@{
+    ViewBag.Title = "My Profile";
 }
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+@section Styles {
+    <link rel="stylesheet" href="./css/personal-profile.css" />
 }
 
-<form id="profilePicForm" asp-action="UpdateProfilePicture" asp-controller="Profile" enctype="multipart/form-data" method="post">
-    <div style="display: flex; align-items: center; gap: 20px;">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-            <img id="profile-preview" src="@Model.ProfilePicture" alt="Profile Picture"
-                 style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid #ddd;" />
 
-            <input type="file" id="fileInput" name="NewProfilePicture" accept="image/*" style="display: none;" />
+<div class="container py-5">
+    <h2 class="text-center mb-4 title">👤 My Profile</h2>
 
-            <button type="button" id="chooseBtn" class="btn btn-primary">
-                Choose Picture
-            </button>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+    }
 
-            <button type="submit" id="submitBtn" class="btn btn-success" style="display: none;">
-                Change Picture
-            </button>
+    <div class="card shadow mx-auto" style="max-width: 700px;">
+        <div class="card-body p-5">
+
+            <form id="profilePicForm" asp-action="UpdateProfilePicture" asp-controller="Profile" enctype="multipart/form-data" method="post">
+
+                <div class="d-flex flex-column align-items-center mb-4">
+                    <img id="profile-preview" src="@Model.ProfilePicture" alt="Profile Picture"
+                         class="rounded-circle mb-3" style="width: 140px; height: 140px; object-fit: cover; border: 3px solid #ccc;" />
+
+                    <input type="file" id="fileInput" name="NewProfilePicture" accept="image/*" style="display: none;" />
+
+                    <div class="d-flex gap-2">
+                        <button type="button" id="chooseBtn" class="btn btn-outline-primary">
+                            📷 Choose Picture
+                        </button>
+
+                        <button type="submit" id="submitBtn" class="btn btn-success" style="display: none;">
+                            ✅ Save Picture
+                        </button>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="text-center">
+                    <h4 class="mb-2">@Model.FirstName @Model.LastName</h4>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> @Model.Email</p>
+                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> @Model.PhoneNumber</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> @Model.Address</p>
+                    <p><i class="fas fa-venus-mars"></i> <strong>Gender:</strong> @Model.Gender</p>
+                </div>
+
+            </form>
+
         </div>
-
-        <div>
-            <h2>@Model.FirstName @Model.LastName</h2>
-        </div>
-
-        <div style="margin-top: 30px;">
-            <p><strong>Email:</strong> @Model.Email</p>
-            <p><strong>Phone:</strong> @Model.PhoneNumber</p>
-            <p><strong>Address:</strong> @Model.Address</p>
-            <p><strong>Gender:</strong> @Model.Gender</p>
-        </div>
-
-</form>
+    </div>
+</div>
 
 @section Scripts {
     <script>

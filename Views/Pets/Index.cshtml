@@ -4,32 +4,47 @@
     ViewBag.Title = "Available Pets";
 }
 
-<h2 class="text-center mb-4">🐾 Available Pets for Adoption</h2>
 
-<div class="row">
-    @foreach (var pet in Model)
-    {
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow">
-                <img src="@pet.Image" class="card-img-top" alt="@pet.PetName" style="height:250px; object-fit:cover;" />
-                <div class="card-body">
-                    <h5 class="card-title">@pet.PetName</h5>
-                    <p class="card-text">
-                        <strong>Age:</strong> @pet.Age<br />
-                        <strong>Gender:</strong> @pet.Gender<br />
-                        <strong>Species:</strong> @pet.Species<br />
-                        <strong>Status:</strong> @pet.AdoptionStatus
-                    </p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="@Url.Action("Details", "Pets", new { id = pet.PetId })" class="btn btn-outline-primary btn-sm">
-                        📄 Details
-                    </a>
-                    <a href="#" class="btn btn-success btn-sm disabled">
-                        ❤️ Adopt
-                    </a>
+<div class="container py-5">
+    <h2 class="text-center mb-5 title">🐾 Available Pets for Adoption</h2>
+
+    <div class="row g-4">
+        @foreach (var pet in Model)
+        {
+            <div class="col-lg-4 col-md-6">
+                <div class="card pet-card shadow-sm">
+                    <img src="@pet.Image" class="card-img-top pet-card-img" alt="@pet.PetName" />
+
+                    <div class="card-body pet-card-body">
+                        <h5 class="card-title">@pet.PetName</h5>
+                        <p class="card-text">
+                            <strong>Age:</strong> @pet.Age<br />
+                            <strong>Gender:</strong> @pet.Gender<br />
+                            <strong>Species:</strong> @pet.Species<br />
+                            <strong>Status:</strong> @pet.AdoptionStatus
+                        </p>
+                    </div>
+
+                    <div class="card-footer bg-transparent d-flex justify-content-between">
+                        <a href="@Url.Action("Details", "Pets", new { id = pet.PetId })" class="btn btn-primary btn-sm">
+                            📄 View Details
+                        </a>
+
+                        @if (pet.AdoptionStatus == "Available")
+                        {
+                            <a href="@Url.Action("Adopt", "Pets", new { id = pet.PetId })" class="btn btn-success btn-sm">
+                                ❤️ Adopt
+                            </a>
+                        }
+                        else
+                        {
+                            <button class="btn btn-secondary btn-sm" disabled>
+                                💤 Not Available
+                            </button>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>

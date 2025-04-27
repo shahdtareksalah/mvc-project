@@ -1,14 +1,20 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model mvc_pets.ViewModels.LoginViewModel
+
 @{
-}
-@{
-    ViewData["Title"] = "Welcome";
+    ViewBag.Title = "Welcome";
 }
 
-<h2>Welcome to the Pet App</h2>
-<p>Please login or register to continue.</p>
+@* Section for specific CSS styles for this page *@
+@section Styles {
+    <link rel="stylesheet" href="~/css/welcome.css" />
+}
 
-<a href="/Account/Login" class="btn btn-primary">Login</a>
-<a href="/Account/Register" class="btn btn-success">Register</a>
+<div class="welcome-container">
+    <h2 class="welcome-title">Welcome to Pet Care 🐾</h2>
+    <p class="welcome-message">Please login or register to continue.</p>
+
+    <div class="action-buttons">
+        <a href="/Account/Login" class="btn btn-primary">Login</a>
+        <a href="/Account/Register" class="btn btn-success">Register</a>
+    </div>
+</div>
