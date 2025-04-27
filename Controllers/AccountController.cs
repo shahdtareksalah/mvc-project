@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using mvc_pets.Models;
 using mvc_pets.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-
 using System.IO;
 using System;
 using System.Threading.Tasks;
@@ -27,13 +25,14 @@ namespace mvc_pets.Controllers
             return View();
         }
 
-        // Register
+        // Register GET
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
+        // Register POST
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
@@ -60,10 +59,10 @@ namespace mvc_pets.Controllers
                     UserName = model.Email,
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
-                    FirstName = model.FirstName,  // Save FirstName
-                    LastName = model.LastName,    // Save LastName
-                    Gender = model.Gender,        // Save Gender
-                    Address = model.Address,      // Save Address
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Gender = model.Gender,
+                    Address = model.Address,
                     ProfilePicture = profilePicPath
                 };
 
@@ -84,19 +83,20 @@ namespace mvc_pets.Controllers
             return View(model);
         }
 
-        // Login
+        // Login GET
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
+        // Login POST
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
 
                 if (result.Succeeded)
                 {
