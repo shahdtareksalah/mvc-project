@@ -47,62 +47,76 @@ namespace mvc_pets.Controllers
             }
         }
 
-        // GET: /BlogPost/Create
+        // ADMIN: List all blog posts with Edit/Delete
+        [Authorize(Roles = "Admin")]
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> AdminIndex()
         {
-            try
-            {
-                var user = await _userManager.GetUserAsync(User);
-                if (user == null)
-                {
-                    TempData["ErrorMessage"] = "You must be logged in to create a blog post.";
-                    return RedirectToAction("Login", "Account");
-                }
-
-                return View();
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = "Error initializing form: " + ex.Message;
-                return RedirectToAction("Index");
-            }
+            var blogs = await _context.BlogPosts.Include(b => b.User).OrderByDescending(b => b.CreatedAt).ToListAsync();
+            return View(blogs);
         }
 
-        // POST: /BlogPost/Create
+        // ADMIN: Edit blog post
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var blog = await _context.BlogPosts.FindAsync(id);
+            if (blog == null) return NotFound();
+            return View(blog);
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(
-            [Bind("Title,Content")] BlogPost blogPost,
-            IFormFile? ImageFile) // Allow null for ImageFile
+        public async Task<IActionResult> Edit(int id, BlogPost blogPost, IFormFile? ImageFile)
         {
-            Console.WriteLine("Processing Create POST request...");
+            Console.WriteLine("Edit POST called for BlogPost Id: " + id);
 
-            // Get the current logged-in user
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null)
+            var existingBlog = await _context.BlogPosts.FindAsync(id);
+            if (existingBlog == null)
             {
-                ModelState.AddModelError(string.Empty, "User not found.");
+                Console.WriteLine("Blog not found for Id: " + id);
+                return NotFound();
+            }
+
+            // Remove unnecessary fields from ModelState
+            ModelState.Remove("UserId");
+            ModelState.Remove("User");
+            ModelState.Remove("CreatedAt");
+
+            // Check if an image is required
+            if (string.IsNullOrEmpty(existingBlog.Image) && (ImageFile == null || ImageFile.Length == 0))
+            {
+                ModelState.AddModelError("Image", "The Image field is required.");
+            }
+            else if (!string.IsNullOrEmpty(existingBlog.Image))
+            {
+                ModelState.Remove("Image");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine("ModelState is invalid:");
+                foreach (var key in ModelState.Keys)
+                {
+                    var state = ModelState[key];
+                    foreach (var error in state.Errors)
+                    {
+                        Console.WriteLine($"Key: {key}, Error: {error.ErrorMessage}");
+                    }
+                }
                 return View(blogPost);
             }
 
-            Console.WriteLine($"User details: FirstName={user.FirstName}, LastName={user.LastName}, Email={user.Email}");
+            // Update blog post properties
+            existingBlog.Title = blogPost.Title;
+            existingBlog.Content = blogPost.Content;
 
-            // Set required fields programmatically
-            blogPost.UserId = user.Id; // Required field
-            blogPost.CreatedAt = DateTime.UtcNow; // Required field
-
-            // Handle image upload (optional)
             if (ImageFile != null && ImageFile.Length > 0)
             {
-                Console.WriteLine($"Uploading file: {ImageFile.FileName}");
-
                 var uploadsFolder = Path.Combine("wwwroot", "uploads");
-                if (!Directory.Exists(uploadsFolder))
-                {
-                    Directory.CreateDirectory(uploadsFolder);
-                    Console.WriteLine($"Created directory: {uploadsFolder}");
-                }
+                if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
 
                 var safeFileName = WebUtility.HtmlEncode(Path.GetFileName(ImageFile.FileName));
                 var uniqueFileName = Guid.NewGuid().ToString() + "_" + safeFileName;
@@ -113,49 +127,97 @@ namespace mvc_pets.Controllers
                     await ImageFile.CopyToAsync(stream);
                 }
 
-                blogPost.Image = $"/uploads/{uniqueFileName}";
-                Console.WriteLine($"Image saved to: {blogPost.Image}");
+                existingBlog.Image = $"/uploads/{uniqueFileName}";
+                Console.WriteLine("Image updated: " + existingBlog.Image);
             }
             else
             {
-                blogPost.Image = null; // Optional field
-                Console.WriteLine("No image uploaded.");
+                existingBlog.Image = existingBlog.Image; // Retain existing image
             }
 
-            // Manually update ModelState for fields set programmatically
-            ModelState.Remove("UserId"); // Remove existing validation errors for UserId
-            ModelState.Remove("Image");  // Remove existing validation errors for Image
-            ModelState.Remove("User");   // Remove existing validation errors for User
+            Console.WriteLine("Saving changes to database...");
+            _context.BlogPosts.Update(existingBlog);
+            await _context.SaveChangesAsync();
+            Console.WriteLine("Blog updated successfully!");
 
-            // Re-validate the model
-            if (!ModelState.IsValid)
+            TempData["SuccessMessage"] = "Blog updated successfully!";
+            return RedirectToAction("AdminIndex");
+        }
+        // ADMIN: Delete blog post
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var blog = await _context.BlogPosts.FindAsync(id);
+            if (blog == null) return NotFound();
+            return View(blog);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var blog = await _context.BlogPosts.FindAsync(id);
+            if (blog == null) return NotFound();
+            _context.BlogPosts.Remove(blog);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Blog deleted successfully!";
+            return RedirectToAction("AdminIndex");
+        }
+
+        // Restrict Create to Admins only
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
             {
-                Console.WriteLine("Model validation failed.");
-                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                TempData["ErrorMessage"] = "You must be logged in to create a blog post.";
+                return RedirectToAction("Login", "Account");
+            }
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Title,Content")] BlogPost blogPost, IFormFile? ImageFile)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "User not found.");
+                return View(blogPost);
+            }
+            blogPost.UserId = user.Id;
+            blogPost.CreatedAt = DateTime.UtcNow;
+            if (ImageFile != null && ImageFile.Length > 0)
+            {
+                var uploadsFolder = Path.Combine("wwwroot", "uploads");
+                if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
+                var safeFileName = WebUtility.HtmlEncode(Path.GetFileName(ImageFile.FileName));
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + safeFileName;
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
                 {
-                    Console.WriteLine($"Validation Error: {error.ErrorMessage}");
+                    await ImageFile.CopyToAsync(stream);
                 }
-                return View(blogPost);
+                blogPost.Image = $"/uploads/{uniqueFileName}";
             }
-
-            try
+            else
             {
-                Console.WriteLine("Adding blog post to database...");
-
-                _context.BlogPosts.Add(blogPost);
-                await _context.SaveChangesAsync();
-
-                Console.WriteLine("Blog post saved successfully.");
-
-                TempData["SuccessMessage"] = "Blog created successfully!";
-                return RedirectToAction(nameof(Index));
+                blogPost.Image = null;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error saving blog post: {ex.Message}");
-                TempData["ErrorMessage"] = "Error: " + ex.Message;
-                return View(blogPost);
-            }
+            ModelState.Remove("UserId");
+            ModelState.Remove("Image");
+            ModelState.Remove("User");
+            if (!ModelState.IsValid) return View(blogPost);
+            _context.BlogPosts.Add(blogPost);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Blog created successfully!";
+            return RedirectToAction("AdminIndex");
         }
     }
 }

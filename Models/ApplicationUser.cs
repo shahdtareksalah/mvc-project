@@ -4,6 +4,9 @@ public class ApplicationUser : IdentityUser
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
+    public bool IsAdmin { get; set; } = false;
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public DateTime? LastLogin { get; set; }
     public string Address { get; set; }
     public string Gender { get; set; }
     public string ProfilePicture { get; set; }  // This is the image path
@@ -15,3 +18,5 @@ public class ApplicationUser : IdentityUser
     public ICollection<Donation> Donations { get; set; }
     public ICollection<Notification> Notifications { get; set; }
 }
+
+

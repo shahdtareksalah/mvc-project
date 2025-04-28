@@ -6,110 +6,46 @@
     <link href="./css/home.css" rel="stylesheet" />
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pet Care</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-</head>
-<body>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content text-center">
+        <h1>Welcome to Pet Care 🐾</h1>
+        <p>Your trusted partner in pet adoption and care</p>
+        <a href="#services" class="btn btn-primary">Get Started</a>
+    </div>
+</section>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Index", "Profile")">
-                                @if (ViewBag.ProfilePicture != null)
-                                {
-                                    <img src="@ViewBag.ProfilePicture" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
-                                }
-                                else
-                                {
-                                    <i class="fas fa-user-circle" style="font-size: 30px;"></i> <!-- default icon if no profile picture -->
-                                }
+<!-- About Us Section -->
+<section id="about" class="about text-center py-5">
+    <h2>About Us</h2>
+    <p>We are dedicated to connecting pets with loving homes and providing comprehensive care guides to ensure their well-being.</p>
+</section>
 
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <form action="@Url.Action("Logout", "Account")" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-link nav-link">Logout</button>
-                            </form>
-                        </li>
-                    }
-                    else
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Account/Login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Account/Register">Register</a>
-                        </li>
-                    }
-                </ul>
+<!-- Services Section -->
+<section id="services" class="services text-center py-5">
+    <h2>Our Services</h2>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card dynamic-card" style="background-image: url('./images/care-guides-bg.jpg');">
+                <h3>Care Guides</h3>
+                <p>Access expert advice on how to care for your pets.</p>
+                <button class="btn btn-success">Learn More</button>
             </div>
         </div>
-    </nav>
-
-
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content text-center">
-            <h1>Welcome to Pet Care 🐾</h1>
-            <p>Your trusted partner in pet adoption and care</p>
-            <a href="#services" class="btn btn-primary">Get Started</a>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="about text-center py-5">
-        <h2>About Us</h2>
-        <p>We are dedicated to connecting pets with loving homes and providing comprehensive care guides to ensure their well-being.</p>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services text-center py-5">
-        <h2>Our Services</h2>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card dynamic-card" style="background-image: url('./images/care-guides-bg.jpg');">
-                    <h3>Care Guides</h3>
-                    <p>Access expert advice on how to care for your pets.</p>
-                    <button class="btn btn-success">Learn More</button>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card dynamic-card" style="background-image: url('./images/emergency-help-bg.jpg');">
-                    <h3>Emergency Help</h3>
-                    <p>Get immediate assistance for lost or injured pets.</p>
-                    <button class="btn btn-danger">Get Help</button>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card dynamic-card" style="background-image: url('./images/donate-bg.jpg');">
-                    <h3>Donation</h3>
-                    <p>Your contribution helps us provide better care for pets in need.</p>
-                    <button class="btn btn-warning">Donate Now</button>
-                </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card dynamic-card" style="background-image: url('./images/emergency-help-bg.jpg');">
+                <h3>Emergency Help</h3>
+                <p>Get immediate assistance for lost or injured pets.</p>
+                <button class="btn btn-danger">Get Help</button>
             </div>
         </div>
-    </section>
-
-
-  
-
-
-</body>
-</html>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card dynamic-card" style="background-image: url('./images/donate-bg.jpg');">
+                <h3>Donation</h3>
+                <p>Your contribution helps us provide better care for pets in need.</p>
+                <button class="btn btn-warning">Donate Now</button>
+            </div>
+        </div>
+    </div>
+</section>
