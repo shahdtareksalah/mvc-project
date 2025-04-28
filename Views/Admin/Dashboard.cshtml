@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">Admin Dashboard</h1>
+    
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total Users</h5>
+                    <p class="card-text display-4">@Model.TotalUsers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total Pets</h5>
+                    <p class="card-text display-4">@Model.TotalPets</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-info mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Adoption Requests</h5>
+                    <p class="card-text display-4">@Model.TotalAdoptionRequests</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total Donations</h5>
+                    <p class="card-text display-4">$@Model.TotalDonations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Quick Actions
+                </div>
+                <div class="card-body">
+                    <a asp-action="Users" class="btn btn-primary">Manage Users</a>
+                    <a asp-controller="Pets" asp-action="Index" class="btn btn-success">Manage Pets</a>
+                    <a asp-controller="AdoptionRequests" asp-action="Index" class="btn btn-info">View Adoption Requests</a>
+                    <a asp-controller="Donations" asp-action="Index" class="btn btn-warning">View Donations</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

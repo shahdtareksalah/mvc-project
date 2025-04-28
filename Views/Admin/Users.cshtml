@@ -1,0 +1,44 @@
+@model List<(ApplicationUser User, IList<string> Roles)>
+@{
+    ViewData["Title"] = "User Management";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">User Management</h1>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Created At</th>
+                    <th>Last Login</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var (user, roles) in Model)
+                {
+                    <tr>
+                        <td>@user.FirstName @user.LastName</td>
+                        <td>@user.Email</td>
+                        <td>@string.Join(", ", roles)</td>
+                        <td>@user.CreatedAt.ToString("MM/dd/yyyy")</td>
+                        <td>@(user.LastLogin?.ToString("MM/dd/yyyy") ?? "Never")</td>
+                        <td>
+                            <form asp-action="ToggleAdmin" method="post" class="d-inline">
+                                <input type="hidden" name="userId" value="@user.Id" />
+                                <button type="submit" class="btn @(roles.Contains("Admin") ? "btn-danger" : "btn-success")">
+                                    @(roles.Contains("Admin") ? "Remove Admin" : "Make Admin")
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div> 

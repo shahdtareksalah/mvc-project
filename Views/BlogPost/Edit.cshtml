@@ -1,0 +1,81 @@
+@model mvc_pets.Models.BlogPost
+@{
+    ViewData["Title"] = "Edit Blog Post";
+    Layout = "_Layout";
+}
+<div class="container mt-4">
+    <h2>Edit Blog Post</h2>
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label">Title</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Content" class="form-label">Content</label>
+            <textarea asp-for="Content" class="form-control" rows="6"></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+        <div class="mb-3 text-center">
+            <label class="form-label">Current Image</label><br />
+            @if (!string.IsNullOrEmpty(Model.Image))
+            {
+                <img id="blog-image-preview" src="@Model.Image" alt="Blog Image" style="max-width:200px;max-height:150px;border:2px solid #ccc;object-fit:cover;" title="Current Image" />
+            }
+            else
+            {
+                <p>No image currently available.</p>
+            }
+        </div>
+        <div class="mb-3 text-center">
+            <input type="file" id="blogImageInput" name="ImageFile" accept="image/*" style="display:none;" />
+            <button type="button" id="chooseBlogImageBtn" class="btn btn-outline-primary">
+                <i class="bi bi-upload"></i> Choose Image
+            </button>
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-action="AdminIndex" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fileInput = document.getElementById('blogImageInput');
+            const chooseBtn = document.getElementById('chooseBlogImageBtn');
+            const preview = document.getElementById('blog-image-preview');
+
+            chooseBtn.addEventListener('click', function () {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', function (e) {
+                const file = e.target.files[0];
+                if (file) {
+                    if (!file.type.startsWith('image/')) {
+                        alert('Please upload a valid image file.');
+                        fileInput.value = ''; // Clear the input
+                        return;
+                    }
+                    if (file.size > 2 * 1024 * 1024) { // 2MB limit
+                        alert('File size must be less than 2MB.');
+                        fileInput.value = ''; // Clear the input
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        preview.src = event.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.src = "";
+                }
+            });
+        });
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
