@@ -8,8 +8,9 @@
 
         public decimal Amount { get; set; }
         public string Type { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime DonationDate { get; set; } = DateTime.Now;
         public string PaymentMethod { get; set; }
+        public string Notes { get; set; }
     }
 
 }

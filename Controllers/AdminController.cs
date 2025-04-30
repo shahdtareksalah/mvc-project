@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using mvc_pets.Models;
-using System.Data;
+using mvc_pets.Data;
+using System.IO;
+using System.Linq;
 
 namespace mvc_pets.Controllers
 {
@@ -10,9 +13,9 @@ namespace mvc_pets.Controllers
     public class AdminController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly ApplicationDbContext _context;
+        private readonly Data.ApplicationDbContext _context;
 
-        public AdminController(UserManager<ApplicationUser> userManager, ApplicationDbContext context)
+        public AdminController(UserManager<ApplicationUser> userManager, Data.ApplicationDbContext context)
         {
             _userManager = userManager;
             _context = context;
@@ -20,16 +23,30 @@ namespace mvc_pets.Controllers
 
         public IActionResult Dashboard()
         {
-            var stats = new
+            var viewModel = new DashboardViewModel
             {
-                // If you add IsActive/IsDeleted, filter like: _context.Pets.Count(p => p.IsActive)
-                TotalUsers = _userManager.Users.Count(),
                 TotalPets = _context.Pets.Count(),
-                TotalAdoptionRequests = _context.Adoptions.Count(),
-                TotalDonations = _context.Donations.Count() 
+                TotalAdoptionRequests = _context.AdoptionRequests.Count(),
+                TotalCaringRequests = _context.CaringRequests.Count(),
+                TotalDonations = _context.Donations.Sum(d => d.Amount),
+                AvailablePets = _context.Pets
+                    .Where(p => p.IsAvailable)
+                    .OrderByDescending(p => p.CreatedAt)
+                    .Take(5)
+                    .ToList(),
+                RecentAdoptionRequests = _context.AdoptionRequests
+                    .Include(r => r.Pet)
+                    .Include(r => r.User)
+                    .OrderByDescending(r => r.RequestDate)
+                    .Take(5)
+                    .ToList(),
+                RecentDonations = _context.Donations
+                    .OrderByDescending(d => d.DonationDate)
+                    .Take(5)
+                    .ToList()
             };
 
-            return View(stats);
+            return View(viewModel);
         }
 
         public async Task<IActionResult> Users()
@@ -70,5 +87,51 @@ namespace mvc_pets.Controllers
             await _userManager.UpdateAsync(user);
             return RedirectToAction(nameof(Users));
         }
+
+        // ??? ???? ??? Pets
+        public IActionResult ManagePets()
+        {
+            var pets = _context.Pets.ToList();
+            return View(pets);
+        }
+
+        // ????? Pet ????
+        [HttpPost]
+        public IActionResult AddPet(Pet pet, IFormFile image)
+        {
+            if (ModelState.IsValid)
+            {
+                // ??? ?????? ?? ??????
+                if (image != null && image.Length > 0)
+                {
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", image.FileName);
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        image.CopyTo(stream);
+                    }
+                    pet.Image = "/images/" + image.FileName;
+                }
+
+                // ????? ??????? ?????? ??? ????? ????????
+                _context.Pets.Add(pet);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction(nameof(ManagePets));
+        }
+
+        // ??? Pet
+        [HttpPost]
+        public IActionResult DeletePet(int id)
+        {
+            var pet = _context.Pets.Find(id);
+            if (pet != null)
+            {
+                _context.Pets.Remove(pet);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction(nameof(ManagePets));
+        }
     }
-} 
+}
