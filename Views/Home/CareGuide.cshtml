@@ -1,0 +1,14 @@
+@model mvc_pets.ViewModel.HomeViewModel
+@{
+    ViewData["Title"] = Model.CareGuide?.Title ?? "Pet Care Guide";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<section class="care-guide-section" style="background: #f8f9fa; padding: 40px 0;">
+    <div class="container" style="max-width: 700px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 32px;">
+        <h2 style="color: #218838; margin-bottom: 20px;">@Model.CareGuide?.Title</h2>
+        <div style="font-size: 1.1rem; color: #333;">
+            @Html.Raw(Model.CareGuide?.Content)
+        </div>
+    </div>
+</section> 

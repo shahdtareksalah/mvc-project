@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using mvc_pets.Models;
 using System.Diagnostics;
+using System.Linq;
+using mvc_pets.ViewModel;
 
 namespace mvc_pets.Controllers
 {
@@ -9,28 +11,40 @@ namespace mvc_pets.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly ApplicationDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<ApplicationUser> userManager)
+        public HomeController(ILogger<HomeController> logger, UserManager<ApplicationUser> userManager, ApplicationDbContext db)
         {
             _logger = logger;
             _userManager = userManager;
+            _db = db;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                var user = await _userManager.GetUserAsync(User);
-                ViewBag.ProfilePicture = user?.ProfilePicture;
-            }
-            else
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            var aboutUs = _db.SiteContents.FirstOrDefault(s => s.Key == "AboutUs");
+            var aboutShelter = _db.SiteContents.FirstOrDefault(s => s.Key == "AboutShelter");
+            var careGuide = _db.SiteContents.FirstOrDefault(s => s.Key == "CareGuide");
+            var cards = _db.HomeCards.ToList();
 
-            return View();
+            var model = new HomeViewModel
+            {
+                AboutUs = aboutUs,
+                AboutShelter = aboutShelter,
+                CareGuide = careGuide,
+                HomeCards = cards
+            };
+            return View(model);
         }
-
+        public IActionResult CareGuide()
+        {
+            var careGuide = _db.SiteContents.FirstOrDefault(s => s.Key == "CareGuide");
+            var model = new HomeViewModel
+            {
+                CareGuide = careGuide
+            };
+            return View(model);
+        }
 
         public IActionResult Privacy()
         {

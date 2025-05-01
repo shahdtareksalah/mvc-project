@@ -106,19 +106,14 @@ public class ProfileController : Controller
     public async Task<IActionResult> UpdateProfilePicture(IFormFile profilePicture)
     {
         var user = await _userManager.GetUserAsync(User);
-        if (user == null)
-        {
-            return NotFound();
-        }
+        if (user == null) return NotFound();
 
-        // Save the new profile picture and update the user's profile picture URL
         if (profilePicture != null && profilePicture.Length > 0)
         {
             var uploadsFolder = Path.Combine("wwwroot", "uploads");
             if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
 
-            var safeFileName = WebUtility.HtmlEncode(Path.GetFileName(profilePicture.FileName));
-            var uniqueFileName = Guid.NewGuid().ToString() + "_" + safeFileName;
+            var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(profilePicture.FileName);
             var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
             using (var stream = new FileStream(filePath, FileMode.Create))
@@ -126,11 +121,17 @@ public class ProfileController : Controller
                 await profilePicture.CopyToAsync(stream);
             }
 
+            // Optionally: Delete old image file if you want to clean up
+            // if (!string.IsNullOrEmpty(user.ProfilePicture))
+            // {
+            //     var oldPath = Path.Combine("wwwroot", user.ProfilePicture.TrimStart('/').Replace("/", Path.DirectorySeparatorChar.ToString()));
+            //     if (System.IO.File.Exists(oldPath)) System.IO.File.Delete(oldPath);
+            // }
+
             user.ProfilePicture = $"/uploads/{uniqueFileName}";
             await _userManager.UpdateAsync(user);
         }
 
-        // Refresh the authentication cookie with updated claims
         await RefreshSignInAsync(user);
 
         TempData["SuccessMessage"] = "Profile picture updated successfully!";
