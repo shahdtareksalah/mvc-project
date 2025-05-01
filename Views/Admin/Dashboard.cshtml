@@ -1,57 +1,168 @@
+@model mvc_pets.Models.DashboardViewModel
+
 @{
-    ViewData["Title"] = "Admin Dashboard";
-    Layout = "_Layout";
+    ViewData["Title"] = "لوحة التحكم";
 }
 
 <div class="container mt-4">
-    <h1 class="mb-4">Admin Dashboard</h1>
-    
-    <div class="row">
+    <h1 class="mb-4">لوحة التحكم</h1>
+
+    <!-- إحصائيات سريعة -->
+    <div class="row mb-4">
         <div class="col-md-3">
-            <div class="card text-white bg-primary mb-3">
+            <div class="card text-white bg-primary">
                 <div class="card-body">
-                    <h5 class="card-title">Total Users</h5>
-                    <p class="card-text display-4">@Model.TotalUsers</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-white bg-success mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Total Pets</h5>
+                    <h5 class="card-title">الحيوانات الأليفة</h5>
                     <p class="card-text display-4">@Model.TotalPets</p>
+                    <a href="/Admin/Pets/ManagePets" class="text-white">إدارة الحيوانات الأليفة</a>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card text-white bg-info mb-3">
+            <div class="card text-white bg-success">
                 <div class="card-body">
-                    <h5 class="card-title">Adoption Requests</h5>
+                    <h5 class="card-title">طلبات التبني</h5>
                     <p class="card-text display-4">@Model.TotalAdoptionRequests</p>
+                    <a href="/Admin/Adoptions" class="text-white">إدارة طلبات التبني</a>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card text-white bg-warning mb-3">
+            <div class="card text-white bg-info">
                 <div class="card-body">
-                    <h5 class="card-title">Total Donations</h5>
-                    <p class="card-text display-4">$@Model.TotalDonations</p>
+                    <h5 class="card-title">طلبات الرعاية</h5>
+                    <p class="card-text display-4">@Model.TotalCaringRequests</p>
+                    <a href="/Admin/CaringRequests" class="text-white">إدارة طلبات الرعاية</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">التبرعات</h5>
+                    <p class="card-text display-4">@Model.TotalDonations</p>
+                    <a href="/Admin/Donations" class="text-white">إدارة التبرعات</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mt-4">
-        <div class="col-md-12">
+    <!-- الحيوانات الأليفة المتاحة للتبني -->
+    <div class="row mb-4">
+        <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    Quick Actions
+                    <h5 class="card-title">الحيوانات الأليفة المتاحة للتبني</h5>
                 </div>
                 <div class="card-body">
-                    <a asp-action="Users" class="btn btn-primary">Manage Users</a>
-                    <a asp-controller="Pets" asp-action="Index" class="btn btn-success">Manage Pets</a>
-                    <a asp-controller="AdoptionRequests" asp-action="Index" class="btn btn-info">View Adoption Requests</a>
-                    <a asp-controller="Donations" asp-action="Index" class="btn btn-warning">View Donations</a>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الاسم</th>
+                                    <th>النوع</th>
+                                    <th>العمر</th>
+                                    <th>الجنس</th>
+                                    <th>الحالة الصحية</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var pet in Model.AvailablePets)
+                                {
+                                    <tr>
+                                        <td>@pet.PetName</td>
+                                        <td>@pet.Species</td>
+                                        <td>@pet.Age</td>
+                                        <td>@pet.Gender</td>
+                                        <td>@pet.HealthStatus</td>
+                                        <td>
+                                            <a href="/Admin/Pets/Details/@pet.PetId" class="btn btn-info btn-sm">التفاصيل</a>
+                                            <a href="/Admin/Pets/Edit/@pet.PetId" class="btn btn-primary btn-sm">تعديل</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- آخر طلبات التبني -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">آخر طلبات التبني</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>المستخدم</th>
+                                    <th>الحيوان الأليف</th>
+                                    <th>الحالة</th>
+                                    <th>التاريخ</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var request in Model.RecentAdoptionRequests)
+                                {
+                                    <tr>
+                                        <td>@request.User.UserName</td>
+                                        <td>@request.Pet.PetName</td>
+                                        <td>@request.AdoptReqStatus</td>
+                                        <td>@request.RequestDate.ToString("yyyy-MM-dd")</td>
+                                        <td>
+                                            <a href="/Admin/Adoptions/Details/@request.AdoptionRequestId" class="btn btn-info btn-sm">التفاصيل</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- آخر التبرعات -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">آخر التبرعات</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>المتبرع</th>
+                                    <th>المبلغ</th>
+                                    <th>النوع</th>
+                                    <th>التاريخ</th>
+                                    <th>طريقة الدفع</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var donation in Model.RecentDonations)
+                                {
+                                    <tr>
+                                        <td>@donation.User.UserName</td>
+                                        <td>@donation.Amount.ToString("C")</td>
+                                        <td>@donation.Type</td>
+                                        <td>@donation.Date.ToString("yyyy-MM-dd")</td>
+                                        <td>@donation.PaymentMethod</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

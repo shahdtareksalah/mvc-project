@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mvc_pets")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2bece988db6b2b9eb103b0fca1db30e5d74fc6b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcdc2ee94bdd376aa6a3f4f9a0ad62ab56eb20c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("mvc_pets")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mvc_pets")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

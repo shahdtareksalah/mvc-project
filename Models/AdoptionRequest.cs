@@ -10,4 +10,8 @@ public class AdoptionRequest
         public Pet Pet { get; set; }
 
         public string AdoptReqStatus { get; set; }
+
+        public DateTime RequestDate { get; set; } = DateTime.Now;
+
+        public string Notes { get; set; }
     }
