@@ -1,272 +1,488 @@
 {
   "Files": [
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\mvc_pets.bundle.scp.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\mvc_pets.bundle.scp.css",
       "PackagePath": "staticwebassets\\mvc_pets.bundle.scp.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\css\\style.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\css\\personal-profile.css",
+      "PackagePath": "staticwebassets\\css\\personal-profile.css"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\css\\register.css",
+      "PackagePath": "staticwebassets\\css\\register.css"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\favicon.ico",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\css\\welcome.css",
+      "PackagePath": "staticwebassets\\css\\welcome.css"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\images\\AdobeStock_452843548-Large.webp",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\1.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\2.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\3.jpg",
+      "PackagePath": "staticwebassets\\images\\3.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\AdobeStock_452843548-Large.webp",
       "PackagePath": "staticwebassets\\images\\AdobeStock_452843548-Large.webp"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\images\\GIV_PetTech_1920x600_0.webp.jpg",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\GIV_PetTech_1920x600_0.webp.jpg",
       "PackagePath": "staticwebassets\\images\\GIV_PetTech_1920x600_0.webp.jpg"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\images\\Screenshot_2024-01-31_at_5.54.51_PM_1200x.webp",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\Screenshot_2024-01-31_at_5.54.51_PM_1200x.webp",
       "PackagePath": "staticwebassets\\images\\Screenshot_2024-01-31_at_5.54.51_PM_1200x.webp"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\images\\images (1).jpg",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\about-1.jpg",
+      "PackagePath": "staticwebassets\\images\\about-1.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\about-2.jpg",
+      "PackagePath": "staticwebassets\\images\\about-2.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\about-3.jpg",
+      "PackagePath": "staticwebassets\\images\\about-3.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\blog-1.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-1.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\blog-2.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-2.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\blog-3.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-3.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\carousel-1.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel-1.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\carousel-2.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel-2.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\feature.jpg",
+      "PackagePath": "staticwebassets\\images\\feature.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\images (1).jpg",
       "PackagePath": "staticwebassets\\images\\images (1).jpg"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\images\\images.jpg",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\images.jpg",
       "PackagePath": "staticwebassets\\images\\images.jpg"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\js\\site.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\price-1.jpg",
+      "PackagePath": "staticwebassets\\images\\price-1.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\price-2.jpg",
+      "PackagePath": "staticwebassets\\images\\price-2.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\price-3.jpg",
+      "PackagePath": "staticwebassets\\images\\price-3.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\profile.png",
+      "PackagePath": "staticwebassets\\images\\profile.png"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\profiles\\19d1e179-5128-47cc-9d65-c9d130438188.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\19d1e179-5128-47cc-9d65-c9d130438188.png"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\profiles\\259dde89-cb69-4fef-9db7-2a26026df566.jpeg",
+      "PackagePath": "staticwebassets\\images\\profiles\\259dde89-cb69-4fef-9db7-2a26026df566.jpeg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\profiles\\38b1d5fc-9be3-46bc-815e-2bb3ec0fa5e3.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\38b1d5fc-9be3-46bc-815e-2bb3ec0fa5e3.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\profiles\\4aefa970-f44d-4779-8679-321287f0716c.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\4aefa970-f44d-4779-8679-321287f0716c.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\profiles\\7d8bbd69-1dad-472e-9b19-cff298e6a0cb.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\7d8bbd69-1dad-472e-9b19-cff298e6a0cb.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\profiles\\90357385-62cf-438f-a6dc-dbd4304332ef.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\90357385-62cf-438f-a6dc-dbd4304332ef.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\profiles\\e035645b-7d40-4eb4-85a2-86656ba8e8ed.jfif",
+      "PackagePath": "staticwebassets\\images\\profiles\\e035645b-7d40-4eb4-85a2-86656ba8e8ed.jfif"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\profiles\\e0fad193-cac0-47b8-9ae8-71c33d7c490d.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\e0fad193-cac0-47b8-9ae8-71c33d7c490d.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\profiles\\e852a25c-5662-4c70-80b7-c4d0d022999e.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\e852a25c-5662-4c70-80b7-c4d0d022999e.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\team-1.jpg",
+      "PackagePath": "staticwebassets\\images\\team-1.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\team-2.jpg",
+      "PackagePath": "staticwebassets\\images\\team-2.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\team-3.jpg",
+      "PackagePath": "staticwebassets\\images\\team-3.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\team-4.jpg",
+      "PackagePath": "staticwebassets\\images\\team-4.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\testimonial-1.jpg",
+      "PackagePath": "staticwebassets\\images\\testimonial-1.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\testimonial-2.jpg",
+      "PackagePath": "staticwebassets\\images\\testimonial-2.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\testimonial-3.jpg",
+      "PackagePath": "staticwebassets\\images\\testimonial-3.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\testimonial-4.jpg",
+      "PackagePath": "staticwebassets\\images\\testimonial-4.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\images\\user.jpg",
+      "PackagePath": "staticwebassets\\images\\user.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "E:\\new c\\Pictures\\mvc_pets\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\tempusdominus\\js\\moment-timezone.min.js",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\moment-timezone.min.js"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\tempusdominus\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\moment.min.js"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\uploads\\1106b903-e5b8-4dca-8965-6aeadb002a2b_price-2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1106b903-e5b8-4dca-8965-6aeadb002a2b_price-2.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\uploads\\4b5127a9-1084-4470-a087-10bb83c12b53_blog-2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\4b5127a9-1084-4470-a087-10bb83c12b53_blog-2.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\uploads\\4bdc98aa-113b-4c85-a283-8404d9234ac3_feature.jpg",
+      "PackagePath": "staticwebassets\\uploads\\4bdc98aa-113b-4c85-a283-8404d9234ac3_feature.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\uploads\\51a40407-6817-4773-95d2-26189fe097b3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\51a40407-6817-4773-95d2-26189fe097b3.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\uploads\\6d5060ee-fd0b-48e0-b799-c37ec1a2d853_team-2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\6d5060ee-fd0b-48e0-b799-c37ec1a2d853_team-2.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\uploads\\8178977b-823a-44be-810b-d5563a6f9af4_testimonial-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\8178977b-823a-44be-810b-d5563a6f9af4_testimonial-1.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\uploads\\9ff6cd87-2b51-4f58-80a6-a5f78f648a6c_team-4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\9ff6cd87-2b51-4f58-80a6-a5f78f648a6c_team-4.jpg"
+    },
+    {
+      "Id": "D:\\Clara\\version\\mvc_pets\\wwwroot\\uploads\\ea1d1807-2105-45d8-b180-e48b94883653_blog-2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ea1d1807-2105-45d8-b180-e48b94883653_blog-2.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.mvc_pets.props",
