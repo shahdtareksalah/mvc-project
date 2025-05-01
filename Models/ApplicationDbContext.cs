@@ -17,6 +17,10 @@ namespace mvc_pets.Models
         public DbSet<CaringRequest> CaringRequests { get; set; }
         public DbSet<BlogPost> BlogPosts { get; set; }
 
+        public DbSet<HomeCard> HomeCards { get; set; }
+        public DbSet<SiteContent> SiteContents { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -30,5 +34,6 @@ namespace mvc_pets.Models
                 .Property(d => d.Amount)
                 .HasColumnType("decimal(18,2)"); // 18 أرقام، و2 للأرقام بعد الفاصلة العشرية
         }
+
     }
 }

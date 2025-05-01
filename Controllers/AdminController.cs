@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using mvc_pets.Models;
 using mvc_pets.Data;
 using System.IO;
 using System.Linq;
 using Microsoft.Extensions.Logging;
-using System.IO;  // Add this for File operations
 
 namespace mvc_pets.Controllers
 {
@@ -15,10 +15,10 @@ namespace mvc_pets.Controllers
     public class AdminController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly ILogger<AdminController> _logger;
 
-        public AdminController(UserManager<ApplicationUser> userManager, Data.ApplicationDbContext context, ILogger<AdminController> logger)
+        public AdminController(UserManager<ApplicationUser> userManager, ApplicationDbContext context, ILogger<AdminController> logger)
         {
             _userManager = userManager;
             _context = context;
@@ -31,6 +31,7 @@ namespace mvc_pets.Controllers
             {
                 var viewModel = new DashboardViewModel
                 {
+                    TotalUsers = _userManager.Users.Count(),
                     TotalPets = _context.Pets.Count(),
                     TotalAdoptionRequests = _context.AdoptionRequests.Count(),
                     TotalCaringRequests = _context.CaringRequests.Count(),
@@ -56,9 +57,7 @@ namespace mvc_pets.Controllers
             }
             catch (Exception ex)
             {
-                // Log the error
                 _logger.LogError($"Error in Dashboard: {ex.Message}");
-                // Return a view with error message
                 return View("Error", new ErrorViewModel { RequestId = HttpContext.TraceIdentifier });
             }
         }
@@ -102,7 +101,100 @@ namespace mvc_pets.Controllers
             return RedirectToAction(nameof(Users));
         }
 
-        // ??? ???? ??? Pets
+        public IActionResult HomeCards()
+        {
+            return View(_context.HomeCards.ToList());
+        }
+
+        public IActionResult AddHomeCard()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddHomeCard(HomeCard card)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.HomeCards.Add(card);
+                _context.SaveChanges();
+                return RedirectToAction("HomeCards");
+            }
+            return View(card);
+        }
+
+        public IActionResult EditHomeCard(int id)
+        {
+            var card = _context.HomeCards.Find(id);
+            if (card == null) return NotFound();
+            return View(card);
+        }
+
+        [HttpPost]
+        public IActionResult EditHomeCard(HomeCard card)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.HomeCards.Update(card);
+                _context.SaveChanges();
+                return RedirectToAction("HomeCards");
+            }
+            return View(card);
+        }
+
+        public IActionResult DeleteHomeCard(int id)
+        {
+            var card = _context.HomeCards.Find(id);
+            if (card != null)
+            {
+                _context.HomeCards.Remove(card);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("HomeCards");
+        }
+        
+        public IActionResult ManageSiteContent(string key = "AboutUs")
+        {
+            var section = _context.SiteContents.FirstOrDefault(s => s.Key == key);
+            if (section == null)
+            {
+                section = new SiteContent { Key = key, Title = GetTitleForKey(key), Content = "" };
+                _context.SiteContents.Add(section);
+                _context.SaveChanges();
+            }
+            ViewBag.SectionKeys = new List<SelectListItem>
+            {
+                new SelectListItem { Value = "AboutUs", Text = "About Us" },
+                new SelectListItem { Value = "AboutShelter", Text = "About Pet Shelters" },
+                new SelectListItem { Value = "CareGuide", Text = "Pet Care Guide" }
+            };
+            return View(section);
+        }
+
+        [HttpPost]
+        public IActionResult ManageSiteContent(SiteContent model)
+        {
+            var section = _context.SiteContents.FirstOrDefault(s => s.Key == model.Key);
+            if (section != null)
+            {
+                section.Title = model.Title;
+                section.Content = model.Content;
+                _context.SaveChanges();
+            }
+            return RedirectToAction("ManageSiteContent", new { key = model.Key });
+        }
+
+        private string GetTitleForKey(string key)
+        {
+            return key switch
+            {
+                "AboutUs" => "About Us",
+                "AboutShelter" => "About Pet Shelters",
+                "CareGuide" => "Pet Care Guide",
+                _ => key
+            };
+        }
+
         public IActionResult ManagePets()
         {
             try
@@ -117,7 +209,6 @@ namespace mvc_pets.Controllers
             }
         }
 
-        // ????? Pet ????
         [HttpPost]
         public IActionResult AddPet(Pet pet, IFormFile image)
         {
@@ -161,7 +252,6 @@ namespace mvc_pets.Controllers
             return RedirectToAction(nameof(ManagePets));
         }
 
-        // ??? Pet
         [HttpPost]
         public IActionResult DeletePet(int id)
         {
@@ -170,7 +260,6 @@ namespace mvc_pets.Controllers
                 var pet = _context.Pets.Find(id);
                 if (pet != null)
                 {
-                    // Delete the image file if it exists
                     if (!string.IsNullOrEmpty(pet.Image))
                     {
                         var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", pet.Image.TrimStart('/'));

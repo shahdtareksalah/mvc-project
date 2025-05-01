@@ -6,46 +6,45 @@
     <link href="./css/home.css" rel="stylesheet" />
 }
 
+@model mvc_pets.ViewModel.HomeViewModel
+
 <!-- Hero Section -->
-<section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content text-center">
-        <h1>Welcome to Pet Care 🐾</h1>
-        <p>Your trusted partner in pet adoption and care</p>
-        <a href="#services" class="btn btn-primary">Get Started</a>
-    </div>
-</section>
+
+       
+   
 
 <!-- About Us Section -->
-<section id="about" class="about text-center py-5">
-    <h2>About Us</h2>
-    <p>We are dedicated to connecting pets with loving homes and providing comprehensive care guides to ensure their well-being.</p>
+<section id="about" class="about text-center py-5" style="position:relative; background: url('/images/about-bg.jpg') center/cover no-repeat; min-height: 400px;">
+    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(34,34,34,0.45);"></div>
+    <div style="position:relative; z-index:2; max-width: 900px; margin:auto; padding: 60px 30px 40px 30px;">
+        <h2 style="color: #fff; font-size: 2.8rem; margin-bottom: 18px; font-weight: 800; letter-spacing: 1px; text-shadow: 0 2px 8px rgba(0,0,0,0.18);">@Model.AboutUs?.Title</h2>
+        <div style="font-size: 1.3rem; color: #f8f9fa; line-height: 1.7; font-weight: 400; text-shadow: 0 2px 8px rgba(0,0,0,0.18);">
+            @Html.Raw(Model.AboutUs?.Content)
+        </div>
+        <h3 style="color: #ffe082; font-size: 1.7rem; margin-top: 32px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.18);">@Model.AboutShelter?.Title</h3>
+        <div style="font-size: 1.15rem; color: #f8f9fa; margin-bottom: 18px; text-shadow: 0 2px 8px rgba(0,0,0,0.18);">
+            @Html.Raw(Model.AboutShelter?.Content)
+        </div>
+    </div>
 </section>
 
 <!-- Services Section -->
 <section id="services" class="services text-center py-5">
     <h2>Our Services</h2>
     <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card dynamic-card" style="background-image: url('./images/care-guides-bg.jpg');">
-                <h3>Care Guides</h3>
-                <p>Access expert advice on how to care for your pets.</p>
-                <button class="btn btn-success">Learn More</button>
+        @foreach (var card in Model.HomeCards)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card dynamic-card">
+                    <h3>@card.Title</h3>
+                    <p>@card.Description</p>
+                    <a href="@card.ButtonLink" class="btn @card.ButtonClass">@card.ButtonText</a>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card dynamic-card" style="background-image: url('./images/emergency-help-bg.jpg');">
-                <h3>Emergency Help</h3>
-                <p>Get immediate assistance for lost or injured pets.</p>
-                <button class="btn btn-danger">Get Help</button>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card dynamic-card" style="background-image: url('./images/donate-bg.jpg');">
-                <h3>Donation</h3>
-                <p>Your contribution helps us provide better care for pets in need.</p>
-                <button class="btn btn-warning">Donate Now</button>
-            </div>
-        </div>
+        }
     </div>
 </section>
+
+
+
+
