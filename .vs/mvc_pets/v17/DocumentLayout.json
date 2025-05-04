@@ -1,82 +1,98 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Clara\\version\\mvc_pets\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Views\\BlogPost\\Create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\BlogPost\\Create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Migrations\\20250504105555_sitecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250504105555_sitecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Views\\Donation\\Create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Donation\\Create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\mvc_pets.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:mvc_pets.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Views\\BlogPost\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\BlogPost\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Views\\BlogPost\\AdminIndex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\BlogPost\\AdminIndex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Controllers\\BlogPostController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\BlogPostController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Views\\Account\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Account\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\views\\admin\\managepets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:views\\admin\\managepets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Controllers\\ProfileController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\ProfileController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Models\\HomeCard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\HomeCard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\views\\blogpost\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:views\\blogpost\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Models\\ErrorViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\ErrorViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\views\\blogpost\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:views\\blogpost\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Migrations\\20250504111436_add2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250504111436_add2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\views\\blogpost\\adminindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:views\\blogpost\\adminindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Migrations\\20250504110532_add1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250504110532_add1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Migrations\\20250504105644_sitecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250504105644_sitecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Views\\Home\\CareGuide.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Home\\CareGuide.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\viewmodel\\userprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:viewmodel\\userprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Clara\\version\\mvc_pets\\Data\\ApplicationDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\ApplicationDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\migrations\\20250430020251_updatedecimalprecision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:migrations\\20250430020251_updatedecimalprecision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\migrations\\20250430015522_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:migrations\\20250430015522_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|c:\\users\\administrator\\desktop\\mvc1\\mvc-project\\migrations\\20250430035100_updatepetstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC27F7CC-BB9D-42A5-898B-A696925DECF7}|mvc_pets.csproj|solutionrelative:migrations\\20250430035100_updatepetstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -119,231 +135,281 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Views\\BlogPost\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\BlogPost\\Create.cshtml",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Views\\BlogPost\\Create.cshtml",
-              "RelativeToolTip": "Views\\BlogPost\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T11:57:13.194Z",
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\style.css",
+              "RelativeDocumentMoniker": "style.css",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\style.css",
+              "RelativeToolTip": "style.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-30T01:27:46.238Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Views\\Donation\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Donation\\Create.cshtml",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Views\\Donation\\Create.cshtml",
-              "RelativeToolTip": "Views\\Donation\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T11:55:02.787Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Views\\BlogPost\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\BlogPost\\Index.cshtml",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Views\\BlogPost\\Index.cshtml",
-              "RelativeToolTip": "Views\\BlogPost\\Index.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T11:54:17.627Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AdminIndex.cshtml",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Views\\BlogPost\\AdminIndex.cshtml",
-              "RelativeDocumentMoniker": "Views\\BlogPost\\AdminIndex.cshtml",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Views\\BlogPost\\AdminIndex.cshtml",
-              "RelativeToolTip": "Views\\BlogPost\\AdminIndex.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T11:54:11.487Z"
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-05-01T04:08:15.693Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "BlogPostController.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Controllers\\BlogPostController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BlogPostController.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Controllers\\BlogPostController.cs",
-              "RelativeToolTip": "Controllers\\BlogPostController.cs",
-              "ViewState": "AQIAAMAAAAAAAAAAAADwv98AAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T11:43:53.422Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "Views\\Account\\Register.cshtml",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAFUAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T11:37:33.688Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAACsAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T11:36:09.059Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProfileController.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Controllers\\ProfileController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Controllers\\ProfileController.cs",
-              "RelativeToolTip": "Controllers\\ProfileController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T11:36:06.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T11:35:57.146Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HomeCard.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Models\\HomeCard.cs",
-              "RelativeDocumentMoniker": "Models\\HomeCard.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Models\\HomeCard.cs",
-              "RelativeToolTip": "Models\\HomeCard.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T11:35:45.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "Models\\ErrorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T11:35:44.835Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "20250504111436_add2.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Migrations\\20250504111436_add2.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250504111436_add2.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Migrations\\20250504111436_add2.cs",
-              "RelativeToolTip": "Migrations\\20250504111436_add2.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T11:14:36.393Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T11:13:23.708Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "20250504110532_add1.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Migrations\\20250504110532_add1.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250504110532_add1.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Migrations\\20250504110532_add1.cs",
-              "RelativeToolTip": "Migrations\\20250504110532_add1.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T11:05:32.997Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAkAAAA",
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-04T11:00:32.739Z"
+              "WhenOpened": "2025-05-01T04:08:14.753Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "20250504105644_sitecard.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Migrations\\20250504105644_sitecard.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250504105644_sitecard.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Migrations\\20250504105644_sitecard.cs",
-              "RelativeToolTip": "Migrations\\20250504105644_sitecard.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAQwEYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T10:56:44.66Z"
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-30T01:51:50.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "mvc_pets.csproj.user",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\mvc_pets.csproj.user",
+              "RelativeDocumentMoniker": "mvc_pets.csproj.user",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\mvc_pets.csproj.user",
+              "RelativeToolTip": "mvc_pets.csproj.user",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2025-04-30T01:27:46.093Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "20250504105555_sitecard.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Migrations\\20250504105555_sitecard.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250504105555_sitecard.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Migrations\\20250504105555_sitecard.cs",
-              "RelativeToolTip": "Migrations\\20250504105555_sitecard.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T10:55:56.125Z"
+              "WhenOpened": "2025-04-30T01:27:46.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\BlogPost\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\BlogPost\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\BlogPost\\Create.cshtml",
+              "RelativeToolTip": "Views\\BlogPost\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T03:30:25.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\BlogPost\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\BlogPost\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\BlogPost\\Edit.cshtml",
+              "RelativeToolTip": "Views\\BlogPost\\Edit.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T03:30:30.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowCoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T03:32:07.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "20250430035100_UpdatePetsTable.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Migrations\\20250430035100_UpdatePetsTable.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250430035100_UpdatePetsTable.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Migrations\\20250430035100_UpdatePetsTable.cs",
+              "RelativeToolTip": "Migrations\\20250430035100_UpdatePetsTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T03:51:00.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManagePets.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\Admin\\ManagePets.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\ManagePets.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\Admin\\ManagePets.cshtml",
+              "RelativeToolTip": "Views\\Admin\\ManagePets.cshtml",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAIwFgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T03:25:16.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAswHIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T03:11:39.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Pet.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Models\\Pet.cs",
+              "RelativeDocumentMoniker": "Models\\Pet.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Models\\Pet.cs",
+              "RelativeToolTip": "Models\\Pet.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T03:26:41.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AdminIndex.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\BlogPost\\AdminIndex.cshtml",
+              "RelativeDocumentMoniker": "Views\\BlogPost\\AdminIndex.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\BlogPost\\AdminIndex.cshtml",
+              "RelativeToolTip": "Views\\BlogPost\\AdminIndex.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T03:30:14.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T03:28:51.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\Admin\\Users.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Users.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\Admin\\Users.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Users.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAqwCsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T03:12:21.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T03:12:18.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AdminDashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Controllers\\AdminDashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminDashboardController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Controllers\\AdminDashboardController.cs",
+              "RelativeToolTip": "Controllers\\AdminDashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T03:11:46.482Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "CareGuide.cshtml",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Views\\Home\\CareGuide.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\CareGuide.cshtml",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Views\\Home\\CareGuide.cshtml",
-              "RelativeToolTip": "Views\\Home\\CareGuide.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T10:40:40.661Z"
+              "Title": "UserProfileViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\ViewModel\\UserProfileViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\UserProfileViewModel.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\ViewModel\\UserProfileViewModel.cs",
+              "RelativeToolTip": "ViewModel\\UserProfileViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T03:11:06.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T02:01:12.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20250430015522_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Migrations\\20250430015522_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250430015522_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Migrations\\20250430015522_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20250430015522_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T01:55:22.189Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\Clara\\version\\mvc_pets\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\Clara\\version\\mvc_pets\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-30T01:32:01.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20250430020251_UpdateDecimalPrecision.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Migrations\\20250430020251_UpdateDecimalPrecision.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250430020251_UpdateDecimalPrecision.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MVC1\\mvc-project\\Migrations\\20250430020251_UpdateDecimalPrecision.cs",
+              "RelativeToolTip": "Migrations\\20250430020251_UpdateDecimalPrecision.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T10:29:53.316Z"
+              "WhenOpened": "2025-04-30T02:02:51.491Z"
             }
           ]
         }
