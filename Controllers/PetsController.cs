@@ -1,16 +1,17 @@
-﻿using System;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using mvc_pets.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using mvc_pets.Data;
+using mvc_pets.Models;
+
+
+using System;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 
 namespace mvc_pets.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Route("Admin/[controller]")]
     public class PetsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -26,10 +27,16 @@ namespace mvc_pets.Controllers
         [Route("Index")]
         public IActionResult Index()
         {
-            var availablePets = _context.Pets.Where(p => p.AdoptionStatus == "Available").ToList();
-            return View(availablePets);
-        }
+            
+                var availablePets = _context.Pets
+                    .Where(p => p.IsAvailable && p.AdoptionStatus == "Available")
+                    .ToList();
+                return View(availablePets);
+            }
+         
 
+        [Authorize(Roles = "Admin")]
+        [Route("Admin/[controller]")]
         [Route("ManagePets")]
         public IActionResult ManagePets()
         {
@@ -68,29 +75,29 @@ namespace mvc_pets.Controllers
                 if (ModelState.IsValid)
                 {
                     _logger.LogInformation("Model state is valid, proceeding to add pet");
-                    
+
                     // Initialize collections
-                    pet.AdoptionRequests = new List<AdoptionRequest>();
+                    pet.AdoptionRequests = new List<Adoptions>();
                     pet.CaringRequests = new List<CaringRequest>();
-                    
+
                     // Set default values if needed
                     if (string.IsNullOrEmpty(pet.AdoptionStatus))
                         pet.AdoptionStatus = "Available";
-                    
+
                     if (string.IsNullOrEmpty(pet.EmergencyStatus))
                         pet.EmergencyStatus = "Normal";
-                    
+
                     if (string.IsNullOrEmpty(pet.HealthStatus))
                         pet.HealthStatus = "Good";
 
                     _context.Pets.Add(pet);
                     _context.SaveChanges();
-                    
+
                     _logger.LogInformation($"Successfully added pet with ID: {pet.PetId}");
                     TempData["SuccessMessage"] = "Pet added successfully!";
                     return RedirectToAction(nameof(ManagePets));
                 }
-                
+
                 _logger.LogWarning("Invalid model state when adding pet");
                 foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
                 {
@@ -103,11 +110,12 @@ namespace mvc_pets.Controllers
                 _logger.LogError($"Error adding pet: {ex.Message}");
                 TempData["ErrorMessage"] = "Error adding pet: " + ex.Message;
             }
-            
+
             return View("~/Views/Admin/ManagePets.cshtml", _context.Pets.ToList());
         }
 
-        [HttpPost]
+       
+[HttpPost]
         [ValidateAntiForgeryToken]
         [Route("DeletePet")]
         public IActionResult DeletePet(int id)

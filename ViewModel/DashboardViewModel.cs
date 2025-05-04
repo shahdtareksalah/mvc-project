@@ -6,5 +6,6 @@
     public int TotalPets { get; set; }
     public int TotalAdoptions { get; set; }
     public int TotalDonations { get; set; }
+    public string PendingDonations { get; set; }
 }
 }

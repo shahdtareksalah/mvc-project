@@ -6,6 +6,7 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/Content/style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     @RenderSection("Styles", required: false)
 </head>
 <body>
@@ -27,8 +28,17 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="BlogPost" asp-action="Index">Blog</a>
                     </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Donation" asp-action="Create">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Adoptions" asp-action="MyRequests">My Requests</a>
+                        </li>
+                    }
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Donations" asp-action="Index">Donate</a>
+                        <a class="nav-link" asp-controller="Home" asp-action="CareGuide">Care Guide</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -41,23 +51,47 @@
                                     Admin
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/Admin/Dashboard">Dashboard</a></li>
-                                    <li><a class="dropdown-item" href="/Admin/Users">Manage Users</a></li>
-                                    <li><a class="dropdown-item" href="/Admin/ManagePets">Manage Pets</a></li>
-                                    @* <li><a class="dropdown-item" href="/Pets">Manage Pets</a></li> *@
-                                    <li><a class="dropdown-item" href="/AdoptionRequests">Manage Adoptions</a></li>
-                                    <li><a class="dropdown-item" href="/BlogPost/AdminIndex">Manage Blogs</a></li>
-                                    <li><a class="dropdown-item" href="/Admin/HomeCards">Manage Cards</a></li>
-                                    <li><a class="dropdown-item" href="/Admin/ManageSiteContent">Manage Site Content</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Dashboard">Dashboard</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Users">Manage Users</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="ManagePets">Manage Pets</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Adoptions" asp-action="AdminRequests">Manage Adoption Requests</a></li>
+                                    <li><a class="dropdown-item" asp-controller="BlogPost" asp-action="AdminIndex">Manage Blogs</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="HomeCards">Manage Cards</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="ManageSiteContent">Manage Site Content</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Donation" asp-action="Manage">Manage Donations</a></li>
                                 </ul>
                             </li>
                         }
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center" asp-controller="Profile" asp-action="Index" title="Profile">
-                                
-                                <span class="ms-1 d-none d-md-inline">Profile</span>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link position-relative" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-bell"></i>
+                                @if (ViewBag.UnreadCount > 0)
+                                {
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">@ViewBag.UnreadCount</span>
+                                }
                             </a>
-                           
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown" style="min-width: 300px;">
+                                @if (ViewBag.Notifications != null && ViewBag.Notifications.Count > 0)
+                                {
+                                    foreach (var notification in ViewBag.Notifications)
+                                    {
+                                        <li>
+                                            <a class="dropdown-item" href="#">@Html.Raw(notification.Content) <small class="text-muted">@notification.SendDate.ToShortDateString()</small></a>
+                                        </li>
+                                    }
+                                }
+                                else
+                                {
+                                    <li><span class="dropdown-item">No notifications</span></li>
+                                }
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item text-center" asp-controller="Notification" asp-action="Index">View All</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Profile" asp-action="Index" title="Profile">
+                                <span class="ms-1">Profile</span>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
@@ -93,6 +127,10 @@
 
     <!-- JavaScript Section -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

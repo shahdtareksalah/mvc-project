@@ -31,6 +31,6 @@ namespace mvc_pets.ViewModels
         public IFormFile NewProfilePicture { get; set; }
 
         // List of adoption requests associated with the user
-        public List<AdoptionRequest> AdoptionRequests { get; set; } = new();
+        public List<Adoptions> AdoptionRequests { get; set; } = new();
     }
 }

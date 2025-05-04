@@ -4,28 +4,28 @@ using mvc_pets.Models;
 using System.Diagnostics;
 using System.Linq;
 using mvc_pets.ViewModel;
+using mvc_pets.Data;
 
 namespace mvc_pets.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly ApplicationDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<ApplicationUser> userManager, ApplicationDbContext db)
+        public HomeController(ILogger<HomeController> logger, UserManager<ApplicationUser> userManager, ApplicationDbContext db) 
+            : base(db)
         {
             _logger = logger;
             _userManager = userManager;
-            _db = db;
         }
 
         public IActionResult Index()
         {
-            var aboutUs = _db.SiteContents.FirstOrDefault(s => s.Key == "AboutUs");
-            var aboutShelter = _db.SiteContents.FirstOrDefault(s => s.Key == "AboutShelter");
-            var careGuide = _db.SiteContents.FirstOrDefault(s => s.Key == "CareGuide");
-            var cards = _db.HomeCards.ToList();
+            var aboutUs = _context.SiteContents.FirstOrDefault(s => s.Key == "AboutUs");
+            var aboutShelter = _context.SiteContents.FirstOrDefault(s => s.Key == "AboutShelter");
+            var careGuide = _context.SiteContents.FirstOrDefault(s => s.Key == "CareGuide");
+            var cards = _context.HomeCards.ToList();
 
             var model = new HomeViewModel
             {
@@ -36,9 +36,10 @@ namespace mvc_pets.Controllers
             };
             return View(model);
         }
+
         public IActionResult CareGuide()
         {
-            var careGuide = _db.SiteContents.FirstOrDefault(s => s.Key == "CareGuide");
+            var careGuide = _context.SiteContents.FirstOrDefault(s => s.Key == "CareGuide");
             var model = new HomeViewModel
             {
                 CareGuide = careGuide

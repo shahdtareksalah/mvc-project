@@ -1,0 +1,55 @@
+﻿@model IEnumerable<mvc_pets.Models.Adoptions>
+
+@{
+    ViewData["Title"] = "My Adoption Requests";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">My Adoption Requests</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            You haven't made any adoption requests yet.
+            <a asp-action="Index" class="alert-link">Browse available pets</a>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var request in Model)
+            {
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="@request.Pet.Image" class="card-img-top" alt="@request.Pet.PetName">
+                        <div class="card-body">
+                            <h5 class="card-title">@request.Pet.PetName</h5>
+                            <p class="card-text">
+                                <strong>Request Date:</strong> @request.RequestDate.ToString("d")<br />
+                                <strong>Status:</strong> 
+                                <span class="badge @(request.AdoptReqStatus == "Pending" ? "bg-warning" : 
+                                                  request.AdoptReqStatus == "Approved" ? "bg-success" : "bg-danger")">
+                                    @request.AdoptReqStatus
+                                </span>
+                            </p>
+                            @if (!string.IsNullOrEmpty(request.Notes))
+                            {
+                                <div class="alert alert-info">
+                                    <strong>Admin Notes:</strong><br />
+                                    @request.Notes
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

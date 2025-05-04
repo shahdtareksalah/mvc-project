@@ -1,0 +1,88 @@
+﻿@using mvc_pets.Models
+@model IEnumerable<mvc_pets.Models.Donation>
+
+@{
+    ViewData["Title"] = "التبرعات";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">التبرعات</h1>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>المبلغ</th>
+                    <th>نوع التبرع</th>
+                    <th>التاريخ</th>
+                    <th>طريقة الدفع</th>
+                    <th>الحالة</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var donation in Model)
+                {
+                    <tr>
+                        <td>@donation.Amount ريال</td>
+                        <td>@donation.Type</td>
+                        <td>@donation.DonationDate.ToString("yyyy/MM/dd")</td>
+                        <td>@donation.PaymentMethod</td>
+                        <td>
+                            @switch (donation.Status)
+                            {
+                                case "Pending":
+                                    <span class="badge bg-warning">قيد الانتظار</span>
+                                    break;
+                                case "Approved":
+                                    <span class="badge bg-success">تمت الموافقة</span>
+                                    break;
+                                case "Rejected":
+                                    <span class="badge bg-danger">تم الرفض</span>
+                                    break;
+                            }
+                        </td>
+                        <td>
+                            @if (donation.Status.Equals("Pending", StringComparison.OrdinalIgnoreCase))
+                            {
+                                <form asp-action="Approve" asp-route-id="@donation.DonationId" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-success btn-sm" onclick="return confirm('هل أنت متأكد من الموافقة على هذا التبرع؟')">
+                                        <i class="fas fa-check"></i> موافقة
+                                    </button>
+                                </form>
+                                <form asp-action="Reject" asp-route-id="@donation.DonationId" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('هل أنت متأكد من رفض هذا التبرع؟')">
+                                        <i class="fas fa-times"></i> رفض
+                                    </button>
+                                </form>
+                            }
+                            else
+                            {
+                                <span class="text-muted">تمت معالجة التبرع</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .badge {
+            font-size: 0.9em;
+            padding: 0.5em 1em;
+        }
+
+        .btn-sm {
+            margin: 0 2px;
+        }
+    </style>
+}
