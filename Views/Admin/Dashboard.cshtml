@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Admin Dashboard";
+    Layout = "_Layout";
 }
 
 <div class="container mt-4">
@@ -13,7 +14,7 @@
             <div class="card text-white bg-primary">
                 <div class="card-body">
                     <h5 class="card-title">Total Users</h5>
-                    <p class="card-text display-4">@ViewBag.TotalUsers</p>
+                    <p class="card-text display-4">@Model.TotalUsers</p>
                 </div>
             </div>
         </div>
@@ -36,8 +37,8 @@
         <div class="col-md-3">
             <div class="card text-white bg-warning">
                 <div class="card-body">
-                    <h5 class="card-title">Total Donations</h5>
-                    <p class="card-text display-4">$@Model.TotalDonations</p>
+                    <h5 class="card-title">Pending Donations</h5>
+                    <p class="card-text display-4">@Model.PendingDonations</p>
                 </div>
             </div>
         </div>
@@ -52,16 +53,23 @@
             <div class="d-flex gap-2">
                 <a href="@Url.Action("Users", "Admin")" class="btn btn-primary">Manage Users</a>
                 <a href="@Url.Action("ManagePets", "Admin")" class="btn btn-success">Manage Pets</a>
-                <a href="@Url.Action("AdoptionRequests", "Admin")" class="btn" style="background-color: #00bcd4; color: white;">View Adoption Requests</a>
+                <a href="@Url.Action("AdminRequests", "Adoptions")" class="btn" style="background-color: #00bcd4; color: white;">View Adoption Requests</a>
                 <a href="@Url.Action("Manage", "Donation")" class="btn btn-warning">View Donations</a>
             </div>
         </div>
     </div>
-</div>
 
-<footer class="text-center mt-4 py-3">
-    <p>&copy; @DateTime.Now.Year My Website - All Rights Reserved</p>
-</footer>
+    <!-- Total Donations Card -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5 class="mb-0">Total Donations</h5>
+        </div>
+        <div class="card-body">
+            <h3 class="display-4">$@Model.TotalDonations.ToString("N2")</h3>
+            <p class="text-muted">Total approved donations</p>
+        </div>
+    </div>
+</div>
 
 @section Styles {
     <style>
@@ -69,6 +77,11 @@
             border: none;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         .card-body {
@@ -84,6 +97,18 @@
             padding: 0.5rem 1.5rem;
             border-radius: 5px;
             font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: none;
+            padding: 1rem 1.5rem;
         }
     </style>
 }

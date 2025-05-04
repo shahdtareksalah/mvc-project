@@ -142,7 +142,22 @@ namespace mvc_pets.Controllers
             Console.WriteLine("Blog updated successfully!");
 
             TempData["SuccessMessage"] = "Blog updated successfully!";
+            // Notify all users about the new blog post
+            var allUserIds = _context.Users.Select(u => u.Id).ToList();
+            foreach (var userId in allUserIds)
+            {
+                var notification = new Notification
+                {
+                    UserId = userId,
+                    Content = $"A new blog post \"{blogPost.Title}\" has been published!",
+                    SendDate = DateTime.Now,
+                    IsRead = false
+                };
+                _context.Notifications.Add(notification);
+            }
+            await _context.SaveChangesAsync();
             return RedirectToAction("AdminIndex");
+
         }
         // ADMIN: Delete blog post
         [Authorize(Roles = "Admin")]
@@ -221,6 +236,22 @@ namespace mvc_pets.Controllers
             _context.BlogPosts.Add(blogPost);
             await _context.SaveChangesAsync();
             TempData["SuccessMessage"] = "Blog created successfully!";
+
+            // Notify all users about the new blog post
+            var allUserIds = _context.Users.Select(u => u.Id).ToList();
+            foreach (var userId in allUserIds)
+            {
+                var notification = new Notification
+                {
+                    UserId = userId,
+                    Content = $"A new blog post '{blogPost.Title}' has been published!",
+                    SendDate = DateTime.Now,
+                    IsRead = false
+                };
+                _context.Notifications.Add(notification);
+            }
+            await _context.SaveChangesAsync();
+
             return RedirectToAction("Index");
         }
     }

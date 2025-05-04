@@ -1,0 +1,14 @@
+﻿@model IEnumerable<mvc_pets.Models.Notification>
+@{
+    ViewBag.Title = "Notifications";
+}
+<h2>Notifications</h2>
+<ul class="list-group">
+    @foreach (var notification in Model)
+    {
+        <li class="list-group-item @(notification.IsRead ? "" : "list-group-item-info")">
+            @Html.Raw(notification.Content)
+            <span class="text-muted float-end">@notification.SendDate.ToShortDateString()</span>
+        </li>
+    }
+</ul>

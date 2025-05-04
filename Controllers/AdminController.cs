@@ -16,33 +16,30 @@ using System.Collections.Generic;
 namespace mvc_pets.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class AdminController : Controller
+    public class AdminController : BaseController
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly Data.ApplicationDbContext _context;
         private readonly ILogger<AdminController> _logger;
 
-        public AdminController(UserManager<ApplicationUser> userManager, Data.ApplicationDbContext context, ILogger<AdminController> logger)
+        public AdminController(UserManager<ApplicationUser> userManager, ApplicationDbContext context, ILogger<AdminController> logger)
+            : base(context)
         {
             _userManager = userManager;
-            _context = context;
             _logger = logger;
         }
-
 
         public async Task<IActionResult> Dashboard()
         {
             try
             {
-                ViewBag.TotalUsers = await _userManager.Users.CountAsync();
-
                 var viewModel = new DashboardViewModel
                 {
+                    TotalUsers = await _userManager.Users.CountAsync(),
                     TotalPets = await _context.Pets.CountAsync(),
                     TotalAdoptionRequests = await _context.Adoptions.CountAsync(),
                     TotalCaringRequests = await _context.CaringRequests.CountAsync(),
                     TotalDonations = await _context.Donations.SumAsync(d => d.Amount),
-                    PendingDonations = await _context.Donations.CountAsync(d => d.Status == "Pending"),
+                    PendingDonations = await _context.Donations.CountAsync(d => d.Status == "Pending")
                 };
 
                 return View(viewModel);
@@ -57,7 +54,7 @@ namespace mvc_pets.Controllers
 
         public async Task<IActionResult> Users()
         {
-            var users = _userManager.Users.ToList();
+            var users = await _userManager.Users.ToListAsync();
             var userRoles = new List<(ApplicationUser User, IList<string> Roles)>();
 
             foreach (var user in users)
@@ -72,25 +69,35 @@ namespace mvc_pets.Controllers
         [HttpPost]
         public async Task<IActionResult> ToggleAdmin(string userId)
         {
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
+            try
             {
-                return NotFound();
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+                if (isAdmin)
+                {
+                    await _userManager.RemoveFromRoleAsync(user, "Admin");
+                    user.IsAdmin = false;
+                }
+                else
+                {
+                    await _userManager.AddToRoleAsync(user, "Admin");
+                    user.IsAdmin = true;
+                }
+
+                await _userManager.UpdateAsync(user);
+                TempData["SuccessMessage"] = $"User {(isAdmin ? "removed from" : "added to")} admin role successfully.";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error toggling admin role: {ex.Message}");
+                TempData["ErrorMessage"] = "An error occurred while updating user role.";
             }
 
-            var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
-            if (isAdmin)
-            {
-                await _userManager.RemoveFromRoleAsync(user, "Admin");
-                user.IsAdmin = false;
-            }
-            else
-            {
-                await _userManager.AddToRoleAsync(user, "Admin");
-                user.IsAdmin = true;
-            }
-
-            await _userManager.UpdateAsync(user);
             return RedirectToAction(nameof(Users));
         }
 
@@ -105,52 +112,79 @@ namespace mvc_pets.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddHomeCard(HomeCard card)
+        public async Task<IActionResult> AddHomeCard(HomeCard card)
         {
             if (ModelState.IsValid)
             {
-                _context.HomeCards.Add(card);
-                _context.SaveChanges();
-                return RedirectToAction("HomeCards");
+                try
+                {
+                    _context.HomeCards.Add(card);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Home card added successfully!";
+                    return RedirectToAction("HomeCards");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError($"Error adding home card: {ex.Message}");
+                    TempData["ErrorMessage"] = "An error occurred while adding the home card.";
+                }
             }
             return View(card);
         }
 
-        public IActionResult EditHomeCard(int id)
+        public async Task<IActionResult> EditHomeCard(int id)
         {
-            var card = _context.HomeCards.Find(id);
+            var card = await _context.HomeCards.FindAsync(id);
             if (card == null) return NotFound();
             return View(card);
         }
 
         [HttpPost]
-        public IActionResult EditHomeCard(HomeCard card)
+        public async Task<IActionResult> EditHomeCard(HomeCard card)
         {
             if (ModelState.IsValid)
             {
-                _context.HomeCards.Update(card);
-                _context.SaveChanges();
-                return RedirectToAction("HomeCards");
+                try
+                {
+                    _context.HomeCards.Update(card);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Home card updated successfully!";
+                    return RedirectToAction("HomeCards");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError($"Error updating home card: {ex.Message}");
+                    TempData["ErrorMessage"] = "An error occurred while updating the home card.";
+                }
             }
             return View(card);
         }
 
-        public IActionResult DeleteHomeCard(int id)
+        public async Task<IActionResult> DeleteHomeCard(int id)
         {
-            var card = _context.HomeCards.Find(id);
-            if (card != null)
+            try
             {
-                _context.HomeCards.Remove(card);
-                _context.SaveChanges();
+                var card = await _context.HomeCards.FindAsync(id);
+                if (card != null)
+                {
+                    _context.HomeCards.Remove(card);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Home card deleted successfully!";
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error deleting home card: {ex.Message}");
+                TempData["ErrorMessage"] = "An error occurred while deleting the home card.";
             }
             return RedirectToAction("HomeCards");
         }
 
-        public IActionResult ManageSiteContent(string key = "AboutUs")
+        public async Task<IActionResult> ManageSiteContent(string key = "AboutUs")
         {
             try
             {
-                var section = _context.SiteContents.FirstOrDefault(s => s.Key == key);
+                var section = await _context.SiteContents.FirstOrDefaultAsync(s => s.Key == key);
                 if (section == null)
                 {
                     section = new SiteContent 
@@ -160,7 +194,7 @@ namespace mvc_pets.Controllers
                         Content = GetDefaultContentForKey(key) 
                     };
                     _context.SiteContents.Add(section);
-                    _context.SaveChanges();
+                    await _context.SaveChangesAsync();
                 }
 
                 ViewBag.SectionKeys = new List<SelectListItem>
@@ -182,7 +216,7 @@ namespace mvc_pets.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ManageSiteContent(SiteContent model)
+        public async Task<IActionResult> ManageSiteContent(SiteContent model)
         {
             try
             {
@@ -192,7 +226,7 @@ namespace mvc_pets.Controllers
                     return RedirectToAction("ManageSiteContent", new { key = model.Key });
                 }
 
-                var section = _context.SiteContents.FirstOrDefault(s => s.Key == model.Key);
+                var section = await _context.SiteContents.FirstOrDefaultAsync(s => s.Key == model.Key);
                 if (section == null)
                 {
                     section = new SiteContent { Key = model.Key };
@@ -201,7 +235,7 @@ namespace mvc_pets.Controllers
 
                 section.Title = model.Title;
                 section.Content = model.Content;
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
 
                 TempData["SuccessMessage"] = "Content saved successfully!";
                 return RedirectToAction("ManageSiteContent", new { key = model.Key });
@@ -211,6 +245,205 @@ namespace mvc_pets.Controllers
                 _logger.LogError($"Error saving site content: {ex.Message}");
                 TempData["ErrorMessage"] = "An error occurred while saving the content.";
                 return RedirectToAction("ManageSiteContent", new { key = model.Key });
+            }
+        }
+
+        public async Task<IActionResult> ManagePets()
+        {
+            try
+            {
+                var pets = await _context.Pets.ToListAsync();
+                return View(pets);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error in ManagePets: {ex.Message}");
+                TempData["ErrorMessage"] = "An error occurred while loading pets.";
+                return View(new List<Pet>());
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddPet(Pet pet, IFormFile image)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(pet.PetName) || string.IsNullOrEmpty(pet.Species) || pet.Age <= 0)
+                {
+                    TempData["ErrorMessage"] = "Please fill in all the required fields: Name, Species, and Age.";
+                    return View("ManagePets", await _context.Pets.ToListAsync());
+                }
+
+                if (image != null && image.Length > 0)
+                {
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    if (!Directory.Exists(uploadsFolder))
+                    {
+                        Directory.CreateDirectory(uploadsFolder);
+                    }
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(image.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await image.CopyToAsync(stream);
+                    }
+
+                    pet.Image = "/images/" + uniqueFileName;
+                }
+                else
+                {
+                    pet.Image = "/images/default-pet-image.jpg";
+                }
+
+                pet.CreatedAt = DateTime.Now;
+                pet.AdoptionStatus ??= "Available";
+                pet.EmergencyStatus ??= "Normal";
+                pet.HealthStatus ??= "Good";
+
+                _context.Pets.Add(pet);
+                await _context.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "Pet added successfully!";
+                return RedirectToAction(nameof(ManagePets));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error adding pet: {ex.Message}");
+                TempData["ErrorMessage"] = "An error occurred while adding the pet.";
+            }
+
+            return View("ManagePets", await _context.Pets.ToListAsync());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeletePet(int id)
+        {
+            try
+            {
+                var pet = await _context.Pets.FindAsync(id);
+                if (pet == null)
+                {
+                    TempData["ErrorMessage"] = "Pet not found.";
+                    return RedirectToAction(nameof(ManagePets));
+                }
+
+                if (!string.IsNullOrEmpty(pet.Image))
+                {
+                    var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", pet.Image.TrimStart('/'));
+                    if (System.IO.File.Exists(imagePath))
+                    {
+                        System.IO.File.Delete(imagePath);
+                    }
+                }
+
+                _context.Pets.Remove(pet);
+                await _context.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "Pet deleted successfully!";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error deleting pet: {ex.Message}");
+                TempData["ErrorMessage"] = "An error occurred while deleting the pet.";
+            }
+
+            return RedirectToAction(nameof(ManagePets));
+        }
+
+        public async Task<IActionResult> EditPet(int id)
+        {
+            try
+            {
+                var pet = await _context.Pets.FindAsync(id);
+                if (pet == null)
+                {
+                    TempData["ErrorMessage"] = "Pet not found.";
+                    return RedirectToAction(nameof(ManagePets));
+                }
+                return View(pet);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error loading pet for edit: {ex.Message}");
+                TempData["ErrorMessage"] = "An error occurred while loading the pet.";
+                return RedirectToAction(nameof(ManagePets));
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditPet(Pet pet, IFormFile image)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(pet.PetName) || string.IsNullOrEmpty(pet.Species) || pet.Age <= 0)
+                {
+                    TempData["ErrorMessage"] = "Please fill in all the required fields: Name, Species, and Age.";
+                    return View(pet);
+                }
+
+                var existingPet = await _context.Pets.FindAsync(pet.PetId);
+                if (existingPet == null)
+                {
+                    TempData["ErrorMessage"] = "Pet not found.";
+                    return RedirectToAction(nameof(ManagePets));
+                }
+
+                // Handle image upload
+                if (image != null && image.Length > 0)
+                {
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    if (!Directory.Exists(uploadsFolder))
+                    {
+                        Directory.CreateDirectory(uploadsFolder);
+                    }
+
+                    // Delete old image if it exists and is not the default image
+                    if (!string.IsNullOrEmpty(existingPet.Image) && existingPet.Image != "/images/default-pet-image.jpg")
+                    {
+                        var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", existingPet.Image.TrimStart('/'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(image.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await image.CopyToAsync(stream);
+                    }
+
+                    existingPet.Image = "/images/" + uniqueFileName;
+                }
+
+                // Update other properties
+                existingPet.PetName = pet.PetName;
+                existingPet.Species = pet.Species;
+                existingPet.Age = pet.Age;
+                
+                existingPet.Description = pet.Description;
+                existingPet.AdoptionStatus = pet.AdoptionStatus ?? "Available";
+                existingPet.EmergencyStatus = pet.EmergencyStatus ?? "Normal";
+                existingPet.HealthStatus = pet.HealthStatus ?? "Good";
+
+                _context.Pets.Update(existingPet);
+                await _context.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "Pet updated successfully!";
+                return RedirectToAction(nameof(ManagePets));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error updating pet: {ex.Message}");
+                TempData["ErrorMessage"] = "An error occurred while updating the pet.";
+                return View(pet);
             }
         }
 
@@ -235,124 +468,5 @@ namespace mvc_pets.Controllers
                 _ => ""
             };
         }
-
-        // Manage Pets Page
-        public IActionResult ManagePets()
-        {
-            try
-            {
-                var pets = _context.Pets.ToList();
-                return View(pets);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error in ManagePets: {ex.Message}");
-                return View("Error", new ErrorViewModel { RequestId = HttpContext.TraceIdentifier });
-            }
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult AddPet(Pet pet, IFormFile image)
-        {
-            try
-            {
-                // Validate required fields
-                if (string.IsNullOrEmpty(pet.PetName) || string.IsNullOrEmpty(pet.Species) || pet.Age <= 0)
-                {
-                    TempData["ErrorMessage"] = "Please fill in all the required fields: Name, Species, and Age.";
-                    return View("ManagePets", _context.Pets.ToList());
-                }
-
-                // Handle image upload
-                if (image != null && image.Length > 0)
-                {
-                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
-                    if (!Directory.Exists(uploadsFolder))
-                    {
-                        Directory.CreateDirectory(uploadsFolder);
-                    }
-
-                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(image.FileName);
-                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        image.CopyTo(stream);
-                    }
-
-                    pet.Image = "/images/" + uniqueFileName;
-                }
-                else
-                {
-                    // Assign default image if none uploaded
-                    pet.Image = "/images/default-pet-image.jpg";
-                }
-
-                // Set default values
-                pet.CreatedAt = DateTime.Now;
-                pet.AdoptionStatus ??= "Available";
-                pet.EmergencyStatus ??= "Normal";
-                pet.HealthStatus ??= "Good";
-
-                // Save to database
-                _context.Pets.Add(pet);
-                _context.SaveChanges();
-
-                TempData["SuccessMessage"] = "Pet added successfully!";
-                return RedirectToAction(nameof(ManagePets));
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error adding pet: {ex.Message}");
-                TempData["ErrorMessage"] = "An error occurred while adding the pet.";
-            }
-
-            return View("ManagePets", _context.Pets.ToList());
-        }
-
-
-
-
-        // Delete Pet
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeletePet(int id)
-        {
-            try
-            {
-                var pet = _context.Pets.Find(id);
-                if (pet == null)
-                {
-                    TempData["ErrorMessage"] = "Pet not found.";
-                    return RedirectToAction(nameof(ManagePets));
-                }
-
-                if (!string.IsNullOrEmpty(pet.Image))
-                {
-                    var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", pet.Image.TrimStart('/'));
-                    if (System.IO.File.Exists(imagePath))
-                    {
-                        System.IO.File.Delete(imagePath);
-                    }
-                }
-
-                _context.Pets.Remove(pet);
-                _context.SaveChanges();
-
-                TempData["SuccessMessage"] = "Pet deleted successfully!";
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error deleting pet: {ex.Message}");
-                TempData["ErrorMessage"] = "An error occurred while deleting the pet.";
-            }
-
-            return RedirectToAction(nameof(ManagePets));
-        }
-
-        // Users Management Page
-       
-
     }
 }

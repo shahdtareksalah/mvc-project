@@ -27,9 +27,13 @@ namespace mvc_pets.Controllers
         [Route("Index")]
         public IActionResult Index()
         {
-            var availablePets = _context.Pets.Where(p => p.AdoptionStatus == "Available").ToList();
-            return View(availablePets);
-        }
+            
+                var availablePets = _context.Pets
+                    .Where(p => p.IsAvailable && p.AdoptionStatus == "Available")
+                    .ToList();
+                return View(availablePets);
+            }
+         
 
         [Authorize(Roles = "Admin")]
         [Route("Admin/[controller]")]

@@ -25,12 +25,26 @@ namespace mvc_pets.Data
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<HomeCard> HomeCards { get; set; }
         public DbSet<SiteContent> SiteContents { get; set; }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+       
+          protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Example: Configure decimal precision
-            modelBuilder.Entity<CaringRequest>()
+            // ... your configuration and seeding ...
+
+            modelBuilder.Entity<Adoptions>()
+                .HasOne(a => a.Pet)
+                .WithMany(p => p.AdoptionRequests)
+                .HasForeignKey(a => a.PetId);
+
+            modelBuilder.Entity<Adoptions>()
+                .HasOne(a => a.User)
+                .WithMany()
+                .HasForeignKey(a => a.UserId);
+        
+
+        // Example: Configure decimal precision
+        modelBuilder.Entity<CaringRequest>()
                 .Property(c => c.Price)
                 .HasColumnType("decimal(18,2)");
 
@@ -93,6 +107,9 @@ namespace mvc_pets.Data
                     ButtonClass = "btn-warning"
                 }
             );
+
+
         }
+
     }
 }

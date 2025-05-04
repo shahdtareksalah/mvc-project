@@ -31,6 +31,10 @@ namespace mvc_pets.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Donation donation)
         {
+            // Remove ApplicationUserId and User from model validation
+            ModelState.Remove("ApplicationUserId");
+            ModelState.Remove("User");
+
             if (ModelState.IsValid)
             {
                 // تأكد من أنه المستخدم مسجل دخوله
@@ -44,7 +48,8 @@ namespace mvc_pets.Controllers
                 }
 
                 // ربط التبرع بالمستخدم
-
+                donation.ApplicationUserId = user.Id;
+                donation.User = user;
                 donation.DonationDate = DateTime.Now;
 
                 try
@@ -52,6 +57,18 @@ namespace mvc_pets.Controllers
                     // إضافة التبرع إلى القاعدة
                     _context.Donations.Add(donation);
                     await _context.SaveChangesAsync();
+
+                    // Add notification for the user
+                    var notification = new Notification
+                    {
+                        UserId = user.Id,
+                        Content = "Thank you! Your donation was received.",
+                        SendDate = DateTime.Now,
+                        IsRead = false
+                    };
+                    _context.Notifications.Add(notification);
+                    await _context.SaveChangesAsync();
+
                     // تحويل المستخدم إلى صفحة النجاح بعد إضافة التبرع
                     return RedirectToAction("Success");
                 }
@@ -117,8 +134,23 @@ namespace mvc_pets.Controllers
                 return NotFound();
             }
 
-            donation.Status = "Rejected";
+            // Notify user before deleting
+            if (!string.IsNullOrEmpty(donation.ApplicationUserId))
+            {
+                var notification = new Notification
+                {
+                    UserId = donation.ApplicationUserId,
+                    Content = "Your donation was rejected and removed. Please contact support for more information.",
+                    SendDate = DateTime.Now,
+                    IsRead = false
+                };
+                _context.Notifications.Add(notification);
+                await _context.SaveChangesAsync();
+            }
+
+            _context.Donations.Remove(donation);
             await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Manage));
         }
     }
