@@ -4,7 +4,7 @@ using mvc_pets.Models;
 using System.Diagnostics;
 using System.Linq;
 using mvc_pets.ViewModel;
-
+using mvc_pets.Data;
 namespace mvc_pets.Controllers
 {
     public class HomeController : Controller

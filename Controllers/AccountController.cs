@@ -32,7 +32,6 @@ namespace mvc_pets.Controllers
             return View();
         }
 
-        // Register POST
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
@@ -74,14 +73,17 @@ namespace mvc_pets.Controllers
                     return RedirectToAction("Index", "Home");
                 }
 
+                // Add identity errors to ModelState
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
                 }
             }
 
+            // If we got this far, something failed; redisplay form with errors and user input (except password)
             return View(model);
         }
+          
 
         // Login GET
         [HttpGet]

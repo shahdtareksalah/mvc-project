@@ -3,7 +3,7 @@ using mvc_pets.Models;
 using System.Diagnostics;
 namespace mvc_pets.Controllers
 {
-    public class AdoptionRequestController : Controller
+    public class AdoptionsController : Controller
     {
         public IActionResult Create()
         {

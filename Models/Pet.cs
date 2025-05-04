@@ -15,7 +15,7 @@
         public bool IsAvailable { get; set; } = true;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        public ICollection<AdoptionRequest> AdoptionRequests { get; set; }
+        public ICollection<Adoptions> AdoptionRequests { get; set; }
         public ICollection<CaringRequest> CaringRequests { get; set; }
     }
 }

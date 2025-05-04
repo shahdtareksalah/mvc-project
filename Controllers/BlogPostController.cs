@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Net;
+using mvc_pets.Data;
 
 namespace mvc_pets.Controllers
 {
@@ -166,8 +167,6 @@ namespace mvc_pets.Controllers
             return RedirectToAction("AdminIndex");
         }
 
-        // Restrict Create to Admins only
-        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -175,12 +174,11 @@ namespace mvc_pets.Controllers
             if (user == null)
             {
                 TempData["ErrorMessage"] = "You must be logged in to create a blog post.";
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Index", "BlogPost"); // Changed from Account/Login to BlogPost/Index
             }
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Title,Content")] BlogPost blogPost, IFormFile? ImageFile)
@@ -193,6 +191,8 @@ namespace mvc_pets.Controllers
             }
             blogPost.UserId = user.Id;
             blogPost.CreatedAt = DateTime.UtcNow;
+
+            // Check for image
             if (ImageFile != null && ImageFile.Length > 0)
             {
                 var uploadsFolder = Path.Combine("wwwroot", "uploads");
@@ -208,16 +208,20 @@ namespace mvc_pets.Controllers
             }
             else
             {
-                blogPost.Image = null;
+                // Instead of exception, show a red error message
+                ModelState.AddModelError("Image", "You must upload an image for your blog post.");
+                return View(blogPost);
             }
+
             ModelState.Remove("UserId");
             ModelState.Remove("Image");
             ModelState.Remove("User");
             if (!ModelState.IsValid) return View(blogPost);
+
             _context.BlogPosts.Add(blogPost);
             await _context.SaveChangesAsync();
             TempData["SuccessMessage"] = "Blog created successfully!";
-            return RedirectToAction("AdminIndex");
+            return RedirectToAction("Index");
         }
     }
 }

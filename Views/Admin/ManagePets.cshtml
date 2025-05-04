@@ -21,10 +21,55 @@
         </div>
     }
 
-    <div class="mb-3">
-        <a asp-action="AddPet" class="btn btn-primary">Add New Pet</a>
+    <!-- Add Pet Form -->
+    <div class="card mb-4">
+        <div class="card-header">Add New Pet</div>
+        <div class="card-body">
+            <form asp-action="AddPet" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="PetName">Name</label>
+                        <input type="text" name="PetName" class="form-control" required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Species">Species</label>
+                        <input type="text" name="Species" class="form-control" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="Age">Age</label>
+                        <input type="number" name="Age" class="form-control" required />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="Gender">Gender</label>
+                        <select name="Gender" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="HealthStatus">Health Status</label>
+                        <input type="text" name="HealthStatus" class="form-control" value="Good" />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="AdoptionStatus">Adoption Status</label>
+                        <input type="text" name="AdoptionStatus" class="form-control" value="Available" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <textarea name="Description" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Pet Image</label>
+                    <input type="file" name="image" class="form-control-file" />
+                </div>
+                <button type="submit" class="btn btn-success">Add Pet</button>
+            </form>
+        </div>
     </div>
-
+    <!-- Existing Pets Table -->
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
