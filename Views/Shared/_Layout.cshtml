@@ -27,8 +27,14 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="BlogPost" asp-action="Index">Blog</a>
                     </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Donation" asp-action="Create">Donate</a>
+                        </li>
+                    }
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Donations" asp-action="Index">Donate</a>
+                        <a class="nav-link" asp-controller="Home" asp-action="CareGuide">Care Guide</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -41,23 +47,21 @@
                                     Admin
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/Admin/Dashboard">Dashboard</a></li>
-                                    <li><a class="dropdown-item" href="/Admin/Users">Manage Users</a></li>
-                                    <li><a class="dropdown-item" href="/Admin/ManagePets">Manage Pets</a></li>
-                                    @* <li><a class="dropdown-item" href="/Pets">Manage Pets</a></li> *@
-                                    <li><a class="dropdown-item" href="/AdoptionRequests">Manage Adoptions</a></li>
-                                    <li><a class="dropdown-item" href="/BlogPost/AdminIndex">Manage Blogs</a></li>
-                                    <li><a class="dropdown-item" href="/Admin/HomeCards">Manage Cards</a></li>
-                                    <li><a class="dropdown-item" href="/Admin/ManageSiteContent">Manage Site Content</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Dashboard">Dashboard</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Users">Manage Users</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="ManagePets">Manage Pets</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="AdoptionRequests">Manage Adoptions</a></li>
+                                    <li><a class="dropdown-item" asp-controller="BlogPost" asp-action="AdminIndex">Manage Blogs</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="HomeCards">Manage Cards</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="ManageSiteContent">Manage Site Content</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Donation" asp-action="Manage">Manage Donations</a></li>
                                 </ul>
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center" asp-controller="Profile" asp-action="Index" title="Profile">
-                                
-                                <span class="ms-1 d-none d-md-inline">Profile</span>
+                            <a class="nav-link" asp-controller="Profile" asp-action="Index" title="Profile">
+                                <span class="ms-1">Profile</span>
                             </a>
-                           
                         </li>
                         <li class="nav-item">
                             <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
@@ -93,6 +97,9 @@
 
     <!-- JavaScript Section -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
