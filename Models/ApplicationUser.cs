@@ -13,7 +13,7 @@ public class ApplicationUser : IdentityUser
     public override string PhoneNumber { get; set; }  // Already part of IdentityUser
 
 
-    public ICollection<Adoptions> AdoptionRequests { get; set; }
+    public ICollection<AdoptionRequest> AdoptionRequests { get; set; }
     public ICollection<CaringRequest> CaringRequests { get; set; }
     public ICollection<Donation> Donations { get; set; }
     public ICollection<Notification> Notifications { get; set; }

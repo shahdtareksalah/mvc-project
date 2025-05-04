@@ -8,50 +8,33 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pet Adoption and Donation Management</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Pet Adoption Application</title>
+    <link rel="stylesheet" href="./style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #bdc3c7, #2c3e50);
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            height: 100vh;
+            margin: 0;
         }
 
-        .form-container,
-        .donation-container {
+        .form-container {
             background-color: #ecf0f1;
             padding: 40px 30px;
             border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             width: 100%;
             max-width: 800px;
-            margin-bottom: 30px;
-            text-align: center;
+            box-sizing: border-box;
         }
 
         h2 {
-            margin-bottom: 20px;
+            text-align: center;
             color: #2c3e50;
-            font-size: 24px;
-        }
-
-        .form-group,
-        label,
-        input,
-        select,
-        textarea,
-        button {
-            width: 100%;
+            margin-bottom: 20px;
         }
 
         label {
@@ -65,6 +48,7 @@
         input,
         select,
         textarea {
+            width: 100%;
             padding: 12px 10px;
             margin-bottom: 20px;
             border: 1px solid #bdc3c7;
@@ -80,6 +64,7 @@
         }
 
         button {
+            width: 100%;
             padding: 12px;
             background-color: #7f8c8d;
             color: #fff;
@@ -94,48 +79,76 @@
                 background-color: #95a5a6;
             }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #95a5a6;
-            font-style: italic;
+        /* Login container styling */
+        .login-container {
+            background-color: #ecf0f1;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            width: 320px;
+            text-align: center;
         }
 
-        .donation-container .form-group {
-            text-align: left;
-        }
+            /* Heading styling */
+            .login-container h2 {
+                margin-bottom: 20px;
+                color: #2c3e50;
+            }
 
-            .donation-container .form-group label {
-                margin-bottom: 5px;
+            /* Input fields styling */
+            .login-container input {
+                width: 100%;
+                padding: 12px 10px;
+                margin: 10px 0;
+                border: 1px solid #bdc3c7;
+                border-radius: 6px;
+                background-color: #fff;
+                font-size: 16px;
+            }
+
+            /* Button styling */
+            .login-container button {
+                width: 100%;
+                padding: 12px;
+                background-color: #7f8c8d;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+                .login-container button:hover {
+                    background-color: #95a5a6;
+                }
+
+            /* Paragraph and link styling */
+            .login-container p {
+                margin-top: 15px;
+                font-size: 14px;
+                color: #2c3e50;
+            }
+
+            .login-container a {
+                color: #34495e;
+                text-decoration: none;
             }
     </style>
 </head>
 <body>
-
-    <!-- Donation Management Form Section -->
-    <div class="donation-container">
-        <h2>Manage Donations</h2>
+    <!-- Login Page Section -->
+    <div class="login-container">
+        <h2>Welcome Back</h2>
         <form action="#" method="post">
-            <div class="form-group">
-                <label for="donor-name">Donor Name</label>
-                <input type="text" id="donor-name" name="donor_name" placeholder="Enter donor's full name" required />
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required />
-            </div>
-            <div class="form-group">
-                <label for="donation-amount">Donation Amount</label>
-                <input type="number" id="donation-amount" name="donation_amount" placeholder="Enter donation amount" required />
-            </div>
-            <div class="form-group">
-                <label for="message">Message (optional)</label>
-                <textarea id="message" name="message" placeholder="Leave a message (optional)"></textarea>
-            </div>
-            <button type="submit">Submit Donation</button>
+            <input type="text" placeholder="Username" required />
+            <input type="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="#">Sign up</a></p>
         </form>
     </div>
 
-    <!-- Pet Adoption Application Form Section -->
+    <!-- Pet Adoption Form Section -->
     <div class="form-container">
         <h2>Pet Adoption Application</h2>
         <form action="#" method="post">
@@ -166,6 +179,5 @@
             <button type="submit">Submit Application</button>
         </form>
     </div>
-
 </body>
 </html>

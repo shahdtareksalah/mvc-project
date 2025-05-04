@@ -27,7 +27,7 @@
             <div class="text-center">
                 @if (Model.AdoptionStatus == "Available")
                 {
-                    <a href="@Url.Action("Request", "Adoptions", new { id = Model.PetId })" class="btn btn-success pet-adopt-btn">
+                    <a href="@Url.Action("Adopt", "Pets", new { id = Model.PetId })" class="btn btn-success pet-adopt-btn">
                         ❤️ Adopt @Model.PetName
                     </a>
                 }
